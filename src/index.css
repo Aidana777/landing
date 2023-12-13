@@ -3,6 +3,10 @@
   src: url(./fonts/Roboto-Black.ttf) format('ttf');
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +16,6 @@
 .app {
   width: 900px;
   margin: 0 auto;
-  background-color: whitesmoke;
+
 
 }

@@ -1,14 +1,16 @@
-import './filter.css'
+import React from 'react';
+import InjectionBlock from '../InjectionBlock/InjectionBlock';
+import './filter.css';
 
 const Filter = () => {
   return (
     <div className='filterContainer'>
-      <div className="block1">
-      <h3 className="medicalText">Диализатор</h3>
+      <section className="block1">
+        <h3 className="medicalText">Диализатор</h3>
         <div className="box">
-          <input 
-          className='inputField' 
-          type="text"
+          <input
+            className='inputField'
+            type="text"
             placeholder="Спр. 'Диализаторы'"
           />
           <button className="filterBtn">
@@ -19,9 +21,9 @@ const Filter = () => {
             />
           </button>
         </div>
-      </div>
+      </section>
 
-      <div className="addSecondBlock">
+      <section className="addSecondBlock">
         <h3 className="medicalText">Концентратор</h3>
         <div className="block2">
           <div className="box">
@@ -37,18 +39,16 @@ const Filter = () => {
             </button>
           </div>
           <div className="addInput">
-          <div className="box">
-            <input className='inputFieldLiq' type="number"
-              
-            />
-          </div>
+            <div className="box">
+              <input className='inputFieldLiq' type="number" />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      
+      <InjectionBlock />
     </div>
-  )
+  );
 }
 
-export default Filter
+export default Filter;
