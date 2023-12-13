@@ -1,0 +1,35 @@
+.box{
+    display: flex;
+    align-items: center;
+}
+.block2{
+    display: flex;
+    align-items: center;
+}
+.medicalText{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.inputField{
+    width: 250px;
+    height: 40px;
+}
+.inputFieldLiq{
+    width: 50px;
+    height: 40px;
+}
+.btnImgMenu {
+    height: 25px;
+    width: 25px;
+  }
+  .filterBtn {
+    background-color: lightgray;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+  }
+.addInput{
+
+    align-items: center;
+margin-left: 210px;
+}

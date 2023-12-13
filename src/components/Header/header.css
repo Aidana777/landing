@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    align-items: center;
+
+}
+
+.header-title { 
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 58px;
+    width: 470px;
+
+}
+
+.header_Text {
+    margin-left: 200px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}
+ span{
+color: deepskyblue;
+ }
