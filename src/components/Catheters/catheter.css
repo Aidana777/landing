@@ -1,13 +1,18 @@
 .cathetersBlock{
    display: flex;
-   align-items: center; 
+   align-items: center;
+  
 }
-.customBlock {
+.boxCather{
+   display: block;
+   
+}
+.catheterModalFirst {
    margin-top: 20px;
    margin-right: 15px;
  }
  
- .customInput {
+ .inputCather {
    height: 40px;
    width: 250px;
    font-size: 20px;
@@ -15,7 +20,7 @@
    font-style: normal;
  }
  
- .customBtn {
+ .catherBtn {
    margin-left: 15px;
  }
  
