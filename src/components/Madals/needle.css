@@ -1,0 +1,130 @@
+.needleCatheterBtn {
+    margin-right: 40px;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.containerNeedle {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.block {
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+.input {
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+/* Modal */
+.centerModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    width: 580px;
+    height: 400px;
+    background-color: #FFF;
+    border-radius: 10px;
+    border: 5px solid gray;
+    overflow: auto;
+    padding: 20px;
+
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #000000;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    height: 20px;
+}
+
+.inner {
+    margin-top: 20px;
+    align-items: center;
+}
+
+.innerTodos {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.starchForm {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.inerField {
+    width: 440px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.innerBtn {
+    margin-left: 12px;
+}
+
+.closeModal {
+    width: 150px;
+    height: 40px;
+    margin-top: 25px;
+}
+
+.textTodosBlocks {
+    display: flex;
+}
+
+.deleteBlock {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 440px;
+}
+
+.todosText {
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
+    font-style: normal;
+    padding: 15px;
+}
+
+.textBtn {
+    margin-top: 12px;
+    width: 40px;
+    height: 45px;
+    margin-left: 13px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import InjectionBlock from '../InjectionBlock/InjectionBlock';
+import NeedleModal from '../Madals/NeedleModal';
+
 import './filter.css';
 
 const Filter = () => {
@@ -45,8 +46,7 @@ const Filter = () => {
           </div>
         </div>
       </section>
-
-      <InjectionBlock />
+      <NeedleModal />
     </div>
   );
 }
