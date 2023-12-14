@@ -76,55 +76,60 @@
     display: flex;
     align-items: center;
     margin-top: 16px;
-}
-
-.starchForm {
+  }
+  
+  .starchForm {
     display: flex;
     align-items: center;
     margin-top: 16px;
-}
-
-.inerField {
+  }
+  
+  .inerField {
     width: 440px;
     height: 40px;
     font-size: 20px;
     font-weight: 500;
-}
-
-.innerBtn {
+  }
+  
+  .innerBtn {
     margin-left: 12px;
-}
-
-.closeModal {
+  }
+  
+  .closeModal {
     width: 150px;
     height: 40px;
     margin-top: 25px;
-}
-
-.textTodosBlocks {
+  }
+  
+  .textTodosBlocks {
     display: flex;
-}
-
-.deleteBlock {
+    align-items: center;
+  }
+  
+  .deleteBlock {
     display: flex;
     align-items: center;
     border: 1px solid black;
     margin-top: 10px;
     justify-content: space-between;
     width: 440px;
-}
-
-.todosText {
+  }
+  
+  .todosText {
     font-size: 17px;
     font-weight: 400;
     color: #000;
     font-style: normal;
     padding: 15px;
-}
-
-.textBtn {
+  }
+  
+  .todosBtnInener {
     margin-top: 12px;
-    width: 40px;
-    height: 45px;
+    width: 30px;
+    height: 35px;
     margin-left: 13px;
-}
+  }
+  .deleteBtn{
+    margin-left: 15px;
+  }
+ 

@@ -7,8 +7,12 @@ import './needle.css';
 const NeedleModal: React.FC = () => {
   const [isModal1Open, setIsModal1Open] = useState(false);
   const [isModal2Open, setIsModal2Open] = useState(false);
-  const [items, setItems] = useState<string[]>([]);
-  const [newItem, setNewItem] = useState('');
+
+  const [itemsModal1, setItemsModal1] = useState<string[]>([]);
+  const [newItemModal1, setNewItemModal1] = useState('');
+
+  const [itemsModal2, setItemsModal2] = useState<string[]>([]);
+  const [newItemModal2, setNewItemModal2] = useState('');
 
   const openModal1 = () => {
     setIsModal1Open(true);
@@ -25,21 +29,39 @@ const NeedleModal: React.FC = () => {
   const closeModal2 = () => {
     setIsModal2Open(false);
   };
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewItem(e.target.value);
+
+  const handleInputChangeModal1 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewItemModal1(e.target.value);
   };
 
-  const handleAddItem = () => {
-    if (newItem.trim() !== '') {
-      setItems([...items, newItem]);
-      setNewItem('');
+  const handleAddItemModal1 = () => {
+    if (newItemModal1.trim() !== '') {
+      setItemsModal1([...itemsModal1, newItemModal1]);
+      setNewItemModal1('');
     }
   };
 
-  const handleRemoveItem = (index: number) => {
-    const updatedItems = [...items];
+  const handleRemoveItemModal1 = (index: number) => {
+    const updatedItems = [...itemsModal1];
     updatedItems.splice(index, 1);
-    setItems(updatedItems);
+    setItemsModal1(updatedItems);
+  };
+
+  const handleInputChangeModal2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewItemModal2(e.target.value);
+  };
+
+  const handleAddItemModal2 = () => {
+    if (newItemModal2.trim() !== '') {
+      setItemsModal2([...itemsModal2, newItemModal2]);
+      setNewItemModal2('');
+    }
+  };
+
+  const handleRemoveItemModal2 = (index: number) => {
+    const updatedItems = [...itemsModal2];
+    updatedItems.splice(index, 1);
+    setItemsModal2(updatedItems);
   };
 
   return (
@@ -49,7 +71,7 @@ const NeedleModal: React.FC = () => {
         <button className='needleCatheterBtn'>
           Игла
         </button>
-        <button className='needleCatheterBtn' >
+        <button className='needleCatheterBtn' onClick={openModal2}>
           Катетер
         </button>
       </section>
@@ -79,60 +101,6 @@ const NeedleModal: React.FC = () => {
             <div className="modal" onClick={(e) => e.stopPropagation()}>
               <div className="modal-content">
                 <div className=" inner  innerModalFirst">
-                  <h3>Лекарственные препараты</h3>
-                  <button className='closeModal' onClick={closeModal1}>Закрыть</button>
-                  <div className="innerFoms">
-                    <div className="starchForm">
-                      <input className='inerField'
-                        type="text"
-                        placeholder='Поиск позиции по первым символам'
-                      />
-                      <button className='innerBtn'>
-                        <img src="../../../icons/search-svgrepo-com.svg" alt="" />
-                      </button>
-                    </div>
-
-                    <div className="innerTodos">
-                      <input
-                        className='inerField'
-                        type="text"
-                        placeholder='Добавить новую запись'
-                        onChange={handleInputChange}
-                      />
-                      <button className='innerBtn' onClick={handleAddItem}>
-                        <img src="../../../icons/add.svg" alt="" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <section className="textTodosBlocks">
-                    <div className="textDelete">
-                      {items.map((item, index) => (
-                        <div key={index} className="deleteBlock">
-                          <p className='todosText'>{item}</p>
-                          <button className="deleteBtn" onClick={() => handleRemoveItem(index)}>
-                            <img src="../../../icons/delete.svg" alt="" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                    <button className='textBtn'>
-                      <img src="../../../icons/right.svg" alt="" />
-                    </button>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-
-        {/* Modal 2 */}
-        {isModal2Open && (
-          <div className="centerModal" onClick={closeModal2}>
-            <div className="modal" onClick={(e) => e.stopPropagation()}>
-              <div className="modal-content">
-                <div className=" inner  innerModalFirst">
                   <h3>Иглы</h3>
                   <button className='closeModal' onClick={closeModal1}>Закрыть</button>
                   <div className="innerFoms">
@@ -151,9 +119,9 @@ const NeedleModal: React.FC = () => {
                         className='inerField'
                         type="text"
                         placeholder='Добавить новую запись'
-                        onChange={handleInputChange}
+                        onChange={handleInputChangeModal1}
                       />
-                      <button className='innerBtn' onClick={handleAddItem}>
+                      <button className='innerBtn' onClick={handleAddItemModal1}>
                         <img src="../../../icons/add.svg" alt="" />
                       </button>
                     </div>
@@ -161,27 +129,86 @@ const NeedleModal: React.FC = () => {
 
                   <section className="textTodosBlocks">
                     <div className="textDelete">
-                      {items.map((item, index) => (
+                      {itemsModal1.map((item, index) => (
                         <div key={index} className="deleteBlock">
                           <p className='todosText'>{item}</p>
-                          <button className="deleteBtn" onClick={() => handleRemoveItem(index)}>
-                            <img src="../../../icons/delete.svg" alt="" />
-                          </button>
+                          <div className="boxBtn">
+                            <button className="deleteBtn" onClick={() => handleRemoveItemModal1(index)}>
+                              <img src="../../../icons/delete.svg" alt="" />
+                            </button>
+                            <button className='deleteBtn'>
+                              <img src="../../../icons/right.svg" alt="" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+
+                    </div>
+
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Modal 2 */}
+        {isModal2Open && (
+          <div className="centerModal" onClick={closeModal2}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-content">
+                <div className="inner innerModalFirst">
+                  <h3>Типы иглы</h3>
+                  <button className='closeModal' onClick={closeModal2}>Закрыть</button>
+                  <div className="innerFoms">
+                    <div className="starchForm">
+                      <input
+                        className='inerField'
+                        type="text"
+                        placeholder='Поиск позиции по первым символам'
+                      />
+                      <button className='innerBtn'>
+                        <img src="../../../icons/search-svgrepo-com.svg" alt="" />
+                      </button>
+                    </div>
+                    <div className="innerTodos">
+                      <input
+                        className='inerField'
+                        type="text"
+                        placeholder='Добавить новую запись'
+                        onChange={handleInputChangeModal2}
+                      />
+                      <button className='innerBtn' onClick={handleAddItemModal2}>
+                        <img src="../../../icons/add.svg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                  <section className="textTodosBlocks">
+                    <div className="textDelete">
+                      {itemsModal2.map((item, index) => (
+                        <div key={index} className="deleteBlock">
+                          <p className='todosText'>{item}</p>
+                          <div className="boxBtn">
+                            <button className="deleteBtn" onClick={() => handleRemoveItemModal2(index)}>
+                              <img src="../../../icons/delete.svg" alt="" />
+                            </button>
+                            <button className='deleteBtn'>
+                              <img src="../../../icons/right.svg" alt="" />
+                            </button>
+                          </div>
                         </div>
                       ))}
                     </div>
-                    <button className='textBtn'>
-                      <img src="../../../icons/right.svg" alt="" />
-                    </button>
+
                   </section>
                 </div>
-                <button className='closeModal' onClick={closeModal2}>Close</button>
+
               </div>
             </div>
           </div>
         )}
       </div>
-      <Catheters/>
+      <Catheters />
     </div>
   );
 };

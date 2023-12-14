@@ -2,3 +2,20 @@
    display: flex;
    align-items: center; 
 }
+.customBlock {
+   margin-top: 20px;
+   margin-right: 15px;
+ }
+ 
+ .customInput {
+   height: 40px;
+   width: 250px;
+   font-size: 20px;
+   font-weight: 400;
+   font-style: normal;
+ }
+ 
+ .customBtn {
+   margin-left: 15px;
+ }
+ 
