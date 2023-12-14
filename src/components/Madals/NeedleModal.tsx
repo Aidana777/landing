@@ -1,6 +1,7 @@
 // NeedleModal.tsx
 
 import React, { useState } from 'react';
+import Catheters from '../Catheters/Catheters';
 import './needle.css';
 
 const NeedleModal: React.FC = () => {
@@ -180,6 +181,7 @@ const NeedleModal: React.FC = () => {
           </div>
         )}
       </div>
+      <Catheters/>
     </div>
   );
 };
