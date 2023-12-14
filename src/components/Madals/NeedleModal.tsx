@@ -74,56 +74,56 @@ const NeedleModal: React.FC = () => {
 
         {/* Modal 1 */}
         {isModal1Open && (
-  <div className="centerModal" onClick={closeModal1}>
-    <div className="modal" onClick={(e) => e.stopPropagation()}>
-      <div className="modal-content">
-        <div className=" inner  innerModalFirst">
-          <h3>Лекарственные препараты</h3>
-          <button className='closeModal' onClick={closeModal1}>Закрыть</button>
-          <div className="innerFoms">
-            <div className="starchForm">
-              <input className='inerField'
-                type="text"
-                placeholder='Поиск позиции по первым символам'
-              />
-              <button className='innerBtn'>
-                <img src="../../../icons/search-svgrepo-com.svg" alt="" />
-              </button>
-            </div>
+          <div className="centerModal" onClick={closeModal1}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-content">
+                <div className=" inner  innerModalFirst">
+                  <h3>Лекарственные препараты</h3>
+                  <button className='closeModal' onClick={closeModal1}>Закрыть</button>
+                  <div className="innerFoms">
+                    <div className="starchForm">
+                      <input className='inerField'
+                        type="text"
+                        placeholder='Поиск позиции по первым символам'
+                      />
+                      <button className='innerBtn'>
+                        <img src="../../../icons/search-svgrepo-com.svg" alt="" />
+                      </button>
+                    </div>
 
-            <div className="innerTodos">
-              <input
-                className='inerField'
-                type="text"
-                placeholder='Добавить новую запись'
-                onChange={handleInputChange}
-              />
-              <button className='innerBtn' onClick={handleAddItem}>
-                <img src="../../../icons/add.svg" alt="" />
-              </button>
+                    <div className="innerTodos">
+                      <input
+                        className='inerField'
+                        type="text"
+                        placeholder='Добавить новую запись'
+                        onChange={handleInputChange}
+                      />
+                      <button className='innerBtn' onClick={handleAddItem}>
+                        <img src="../../../icons/add.svg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <section className="textTodosBlocks">
+                    <div className="textDelete">
+                      {items.map((item, index) => (
+                        <div key={index} className="deleteBlock">
+                          <p className='todosText'>{item}</p>
+                          <button className="deleteBtn" onClick={() => handleRemoveItem(index)}>
+                            <img src="../../../icons/delete.svg" alt="" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    <button className='textBtn'>
+                      <img src="../../../icons/right.svg" alt="" />
+                    </button>
+                  </section>
+                </div>
+              </div>
             </div>
           </div>
-
-          <section className="textTodosBlocks">
-            <div className="textDelete">
-              {items.map((item, index) => (
-                <div key={index} className="deleteBlock">
-                  <p className='todosText'>{item}</p>
-                  <button className="deleteBtn" onClick={() => handleRemoveItem(index)}>
-                    <img src="../../../icons/delete.svg" alt="" />
-                  </button>
-                </div>
-              ))}
-            </div>
-            <button className='textBtn'>
-              <img src="../../../icons/right.svg" alt="" />
-            </button>
-          </section>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+        )}
 
 
         {/* Modal 2 */}
@@ -131,8 +131,49 @@ const NeedleModal: React.FC = () => {
           <div className="centerModal" onClick={closeModal2}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>
               <div className="modal-content">
-                {/* Add content for the second modal here */}
-                <p>This is the content of modal 2.</p>
+                <div className=" inner  innerModalFirst">
+                  <h3>Иглы</h3>
+                  <button className='closeModal' onClick={closeModal1}>Закрыть</button>
+                  <div className="innerFoms">
+                    <div className="starchForm">
+                      <input className='inerField'
+                        type="text"
+                        placeholder='Поиск позиции по первым символам'
+                      />
+                      <button className='innerBtn'>
+                        <img src="../../../icons/search-svgrepo-com.svg" alt="" />
+                      </button>
+                    </div>
+
+                    <div className="innerTodos">
+                      <input
+                        className='inerField'
+                        type="text"
+                        placeholder='Добавить новую запись'
+                        onChange={handleInputChange}
+                      />
+                      <button className='innerBtn' onClick={handleAddItem}>
+                        <img src="../../../icons/add.svg" alt="" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <section className="textTodosBlocks">
+                    <div className="textDelete">
+                      {items.map((item, index) => (
+                        <div key={index} className="deleteBlock">
+                          <p className='todosText'>{item}</p>
+                          <button className="deleteBtn" onClick={() => handleRemoveItem(index)}>
+                            <img src="../../../icons/delete.svg" alt="" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    <button className='textBtn'>
+                      <img src="../../../icons/right.svg" alt="" />
+                    </button>
+                  </section>
+                </div>
                 <button className='closeModal' onClick={closeModal2}>Close</button>
               </div>
             </div>
