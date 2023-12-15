@@ -75,16 +75,19 @@ const NeedleModal: React.FC = () => {
         <button
           className={`needleCatheterBtn ${selectedInjectionType === 'Игла' ? 'selected' : ''}`}
           onClick={openModal1}
+          disabled={!selectedInjectionType}
         >
           Игла
         </button>
         <button
           className={`needleCatheterBtn ${selectedInjectionType === 'Катетер' ? 'selected' : ''}`}
           onClick={openModal2}
+          disabled={!selectedInjectionType}
         >
           Катетер
         </button>
       </section>
+
 
       <div className="containerNeedle">
         <div className="block firstModal">

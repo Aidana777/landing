@@ -1,26 +1,9 @@
-.subTitle {
-    font-size: 27px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 44px;
-    margin-top: 20px;
-
-}
-.content_Text{
-margin-top: 10px;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 26px; /* 162.5% */
-}
-
-
 .buttonChose {
     display: flex;
     margin-top: 5px;
-}
-
-.contentItem {
+  }
+  
+  .contentItem {
     width: 120px;
     height: 40px;
     flex-shrink: 0;
@@ -30,4 +13,9 @@ line-height: 26px; /* 162.5% */
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-}
+  }
+  
+  .selected {
+    border-color: green;
+  }
+  
