@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import Banner from '../Banner/Banner';
 import HomeBlock from '../HomeBlock/HomeBlock';
+import TextBlock from '../TextBlock/TextBlock';
 import './catheter.css';
 
 const Catheters: React.FC = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [inputValueFirst, setInputValueFirst] = useState('');
     const [itemsModalFirst, setItemsModalFirst] = useState<string[]>(['Игла размер №1', 'Игла размер №2', 'Игла размер №4', 'Игла размер №4']);
-
     const [showModalSecond, setShowModalSecond] = useState(false);
     const [itemsModalSecond] = useState<string[]>(['Катетер Фолея,', 'Катетер Малеко', 'Катетер Пеццера', 'Игла размер №4']);
 
@@ -216,7 +216,8 @@ const Catheters: React.FC = () => {
             <button>Сформировать сеанс</button>
             <section></section>
             <Banner />
-            <HomeBlock/>
+            <HomeBlock />
+            <TextBlock />
         </div>
     );
 };
