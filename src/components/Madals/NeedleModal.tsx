@@ -148,7 +148,9 @@ const NeedleModal: React.FC = () => {
                             <button className="deleteBtn" onClick={() => handleRemoveItemModal1(index)}>
                               <img src="../../../icons/delete.svg" alt="" />
                             </button>
-                            <button className='deleteBtn'></button>
+                            <button className='deleteBtn'>
+                              <img src="../../../icons/right.svg" alt="" />
+                            </button>
                           </div>
                         </div>
                       ))}

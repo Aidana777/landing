@@ -1,5 +1,6 @@
 // Catheters.tsx
 import React, { useState } from 'react';
+import Banner from '../Banner/Banner';
 import './catheter.css';
 
 const Catheters: React.FC = () => {
@@ -9,6 +10,7 @@ const Catheters: React.FC = () => {
 
     const [showModalSecond, setShowModalSecond] = useState(false);
     const [itemsModalSecond] = useState<string[]>(['Катетер Фолея,', 'Катетер Малеко', 'Катетер Пеццера', 'Игла размер №4']);
+
 
 
 
@@ -54,7 +56,6 @@ const Catheters: React.FC = () => {
     return (
         <div>
             <div className="cathetersBlock">
-                {/* Modal for catheterModalFirst */}
                 <div className="catheterModalFirst">
                     <div className="boxCather">
                         <input
@@ -212,6 +213,8 @@ const Catheters: React.FC = () => {
 
             </div>
             <button>Сформировать сеанс</button>
+            <section></section>
+            <Banner />
         </div>
     );
 };

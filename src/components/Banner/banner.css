@@ -1,0 +1,33 @@
+.modalSession {
+    display: flex;
+    align-items: center;
+}
+
+.bannerInput {
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bannerBtn {
+    margin-left: 12px;
+}
+.doze  {
+    display: flex;
+    align-self: center;
+    margin-top: 30px;
+    margin-right: 20px;
+
+}
+.bannerFirst{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.bannerSecond{
+    display: flex;
+    align-items: center;
+    
+}
