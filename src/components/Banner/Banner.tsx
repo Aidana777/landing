@@ -17,9 +17,14 @@ const Banner = () => {
     const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
     const [selectedButton, setSelectedButton] = useState<number | null>(null);
+    const [selectedPath, setSelectedPath] = useState<string | null>(null);
 
     const handleButtonClick = (buttonNumber: number) => {
         setSelectedButton(buttonNumber);
+    };
+    const handleAddItemSecond = () => {
+
+        closeModalSecond();
     };
     const openModalSecond = () => {
         setShowModalSecond(true);
@@ -40,7 +45,9 @@ const Banner = () => {
     const handleInputChangeFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValueFirst(e.target.value);
     };
-
+    const handlePathClick = (path: string) => {
+        setSelectedPath(path);
+    };
     const handleAddItemFirst = () => {
         if (inputValueFirst.trim() !== '') {
             setItemsModalFirst((prevItems) => [...prevItems, inputValueFirst]);
@@ -73,12 +80,12 @@ const Banner = () => {
         const newId = tableData.length + 1;
         const newRow: TableRow = {
             id: newId,
-            medication: '', // You can set default values or leave them empty
-            path: '',
-            start: '',
-            end: '',
-            session: selectedButton || 1, // Assign the selected button value or a default value
-            days: 0, // You can set default values or leave them empty
+            medication: 'New Medication', // Default value for medication
+            path: 'New Path', // Default value for path
+            start: 'New Start', // Default value for start
+            end: 'New End', // Default value for end
+            session: selectedButton || 1,
+            days: 0,
         };
         setTableData((prevData) => [...prevData, newRow]);
     };
@@ -134,7 +141,7 @@ const Banner = () => {
                                                         <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='deleteBtn'>
+                                                        <button className='right'>
                                                             <img src="../../../icons/right.svg" alt="" />
                                                         </button>
                                                     </div>
@@ -151,14 +158,16 @@ const Banner = () => {
                 )}
             </div>
             <section className='doze'>
+                <div className="textBox">
+                    <h3>Путь приёма</h3>
+                    <div className="bannerFirst">
 
-                <div className="bannerFirst">
+                        <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
-                    <button className='bannerBtn' onClick={openModalSecond}>
-                        <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-                    </button>
-
+                    </div>
                 </div>
 
                 {showModalSecond && (
@@ -168,21 +177,29 @@ const Banner = () => {
                                 <h3> Справочник "Путь приема"</h3>
                             </div>
                             {itemsModalSecondBanner.map((item, index) => (
-                                <div key={index} className="deleteBlock">
+                                <div
+                                    key={index}
+                                    className={`deleteBlock ${selectedPath === item ? 'selected' : ''}`}
+                                    onClick={() => handlePathClick(item)}
+                                >
                                     <p className='todosText'>{item}</p>
-
                                 </div>
                             ))}
+                            <button onClick={handleAddItemSecond}>Добавить в таблицу</button>
                         </div>
                     </div>
                 )}
 
-                <div className="bannerSecond">
+                <div className="textBox">
+                    <h3>Дозировка </h3>
+                    <div className="bannerFirst">
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
-                    <button className='bannerBtn' onClick={openModalSecond}>
-                        <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-                    </button>
+                        <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
+
+                    </div>
                 </div>
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
