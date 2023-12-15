@@ -91,4 +91,16 @@ margin-left: 20px;
   tr:hover {
     background-color: #f5f5f5;
   }
-  
+  .todosText {
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
+    font-style: normal;
+    padding: 15px;
+  }
+  .selectedText {
+    color: green; /* Set your desired highlight color */
+  }
+  .endnDate{
+    margin-left: 20px;
+  }

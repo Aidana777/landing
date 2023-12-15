@@ -1,6 +1,7 @@
 // Catheters.tsx
 import React, { useState } from 'react';
 import Banner from '../Banner/Banner';
+import HomeBlock from '../HomeBlock/HomeBlock';
 import './catheter.css';
 
 const Catheters: React.FC = () => {
@@ -215,6 +216,7 @@ const Catheters: React.FC = () => {
             <button>Сформировать сеанс</button>
             <section></section>
             <Banner />
+            <HomeBlock/>
         </div>
     );
 };

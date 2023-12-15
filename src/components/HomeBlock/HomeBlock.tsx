@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './banner.css'
 
 interface TableRow {
     id: number;
@@ -11,30 +10,26 @@ interface TableRow {
     days: number;
 }
 
-const Banner = () => {
+const HomeBlock = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showModalSecond, setShowModalSecond] = useState(false);
+
     const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
-    const [selectedButton, setSelectedButton] = useState<number | null>(null);
-    const [showDosageModal, setShowDosageModal] = useState(false);
+        const [selectedButton] = useState<number | null>(null);
+        const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '3 рад в день ']);
 
-    // ... (другие состояния)
+    const [showDosageModal, setShowDosageModal] = useState(false);
 
     const openDosageModal = () => {
         setShowDosageModal(true);
     };
 
+
     const closeDosageModal = () => {
         setShowDosageModal(false);
     };
 
-
-
-
-    const handleButtonClick = (buttonNumber: number) => {
-        setSelectedButton(buttonNumber);
-    };
     const openModalSecond = () => {
         setShowModalSecond(true);
     };
@@ -71,9 +66,7 @@ const Banner = () => {
         { id: 2, medication: 'Medication 2', path: 'Path 2', start: 'Start 2', end: 'End 2', session: 2, days: 14 },
     ]);
 
-    const handleDeleteRow = (id: number) => {
-        setTableData((prevData) => prevData.filter((row) => row.id !== id));
-    };
+
 
     const [inputValueFirst, setInputValueFirst] = useState('');
     const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
@@ -100,7 +93,7 @@ const Banner = () => {
     return (
         <div>
             <div className="container">
-                <h3>Назначения после сеанса</h3>
+                <h3>Лечение на дому</h3>
                 <p>Лекарственный препарат</p>
             </div>
             <div className="modalSession">
@@ -169,14 +162,14 @@ const Banner = () => {
                     <h3>Путь приёма</h3>
                     <div className="bannerFirst">
                         <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
-                        <button className='bannerBtn' onClick={openModalSecond}>
+                        <button className='bannerBtn' onClick={openDosageModal}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
 
                     </div>
                 </div>
-                {showModalSecond && (
-                    <div className="centerModal" onClick={closeModalSecond}>
+                {showDosageModal && (
+                    <div className="centerModal" onClick={closeDosageModal}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
                             <div>
                                 <h3>Справочник "Дозы препаратов"</h3>
@@ -192,21 +185,20 @@ const Banner = () => {
                 )}
 
 
-
-
-
                 <div className="textBox">
-                    <h3>Дозировка</h3>
+                    <h3>Дозировка </h3>
                     <div className="bannerFirst">
-                        <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
-                        <button className='bannerBtn' onClick={openDosageModal}>
+
+                        <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
 
                     </div>
                 </div>
-                {showDosageModal && (
-                    <div className="centerModal" onClick={closeDosageModal}>
+
+                {showModalSecond && (
+                    <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
                             <div>
                                 <h3>Справочник "Дозы препаратов"</h3>
@@ -222,55 +214,38 @@ const Banner = () => {
                 )}
 
 
-
             </section>
-            <div className="seans">
-                <h4>Номера сеансов:</h4>
-                <button
-                    className={`seansBtn ${selectedButton === 1 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(1)}
-                >
-                    1
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 2 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(2)}
-                >
-                    2
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 3 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(3)}
-                >
-                    3
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 4 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(4)}
-                >
-                    4
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 5 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(5)}
-                >
-                    5
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 6 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(6)}
-                >
-                    6
-                </button>
-                <button
-                    className={`seansBtn ${selectedButton === 7 ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick(7)}
-                >
-                    7
-                </button>
-            </div>
+
             <section className='dateBlock'>
-                <div className="begginDate">
+                <div className="textBox">
+                    <h3>Кратность приёма </h3>
+                    <div className="bannerFirst">
+
+                        <input className='bannerInput' type="text" placeholder='Спр. "Кр-ть приема"' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
+
+                    </div>
+                </div>
+
+                {showModalSecond && (
+                    <div className="centerModal" onClick={closeModalSecond}>
+                        <div className="modal" onClick={(e) => e.stopPropagation()}>
+                            <div>
+                                <h3>Справочник "Кратность приема"</h3>
+                            </div>
+                            {itemsModalDays.map((item, index) => (
+                                <div key={index} className="deleteBlock">
+                                    <p className='todosText'>{item}</p>
+
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                <div className="endnDate">
                     <h3>Начало приёма</h3>
                     <input type="date" name="begin" />
                 </div>
@@ -278,59 +253,14 @@ const Banner = () => {
                     <h3>Конец приёма</h3>
                     <input type="date" name="begin" />
                 </div>
-                <div className='dateText'>Количество сеансов:3</div>
             </section>
             <div>
-                <button onClick={handleCreateRow}>Сформировать</button>
+                <button onClick={handleCreateRow}>Добавить</button>
+
             </div>
-            <div className="tablet">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Лекарство</th>
-                            <th>Путь приёма</th>
-                            <th>Начало приёма</th>
-                            <th>Конец приёма</th>
-                            <th>Номер сеанса</th>
-                            <th>Дней</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {tableData.map((row, index) => (
-                            <tr key={index}>
-                                <td>{row.medication}</td>
-                                <td>{row.path}</td>
-                                <td>{row.start}</td>
-                                <td>{row.end}</td>
-                                <td>{row.session}</td>
-                                <td>{row.days}</td>
-                                <td>
-                                    <img
-                                        src="../../../icons/delete.svg"
-                                        alt="Delete"
-                                        onClick={() => handleDeleteRow(row.id)}
-                                        style={{ cursor: 'pointer' }}
-                                    />
-                                </td>
-                            </tr>
-                        ))}
-                        {[...Array(8 - tableData.length)].map((_, index) => (
-                            <tr key={`empty-${index}`}>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+
         </div>
     )
 }
 
-export default Banner
+export default HomeBlock
