@@ -1,10 +1,26 @@
 import { useState } from 'react';
 import './banner.css'
+
+interface TableRow {
+    id: number;
+    medication: string;
+    path: string;
+    start: string;
+    end: string;
+    session: number;
+    days: number;
+}
+
 const Banner = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showModalSecond, setShowModalSecond] = useState(false);
     const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
-    const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Аретериально ']);
+    const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
+    const [selectedButton, setSelectedButton] = useState<number | null>(null);
+
+    const handleButtonClick = (buttonNumber: number) => {
+        setSelectedButton(buttonNumber);
+    };
     const openModalSecond = () => {
         setShowModalSecond(true);
     };
@@ -36,8 +52,37 @@ const Banner = () => {
         setItemsModalFirst((prevItems) => prevItems.filter((_, i) => i !== index));
     };
 
+    const [tableData, setTableData] = useState<TableRow[]>([
+        { id: 1, medication: 'Medication 1', path: 'Path 1', start: 'Start 1', end: 'End 1', session: 1, days: 7 },
+        { id: 2, medication: 'Medication 2', path: 'Path 2', start: 'Start 2', end: 'End 2', session: 2, days: 14 },
+    ]);
+
+    const handleDeleteRow = (id: number) => {
+        setTableData((prevData) => prevData.filter((row) => row.id !== id));
+    };
+
     const [inputValueFirst, setInputValueFirst] = useState('');
-    const [itemsModalFirst, setItemsModalFirst] = useState<string[]>(['Игла размер №1', 'Игла размер №2', 'Игла размер №4', 'Игла размер №4']);
+    const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
+        'Игла размер №1',
+        'Игла размер №2',
+        'Игла размер №4',
+        'Игла размер №4',
+    ]);
+
+    const handleCreateRow = () => {
+        const newId = tableData.length + 1;
+        const newRow: TableRow = {
+            id: newId,
+            medication: '', // You can set default values or leave them empty
+            path: '',
+            start: '',
+            end: '',
+            session: selectedButton || 1, // Assign the selected button value or a default value
+            days: 0, // You can set default values or leave them empty
+        };
+        setTableData((prevData) => [...prevData, newRow]);
+    };
+
     return (
         <div>
             <div className="container">
@@ -106,7 +151,9 @@ const Banner = () => {
                 )}
             </div>
             <section className='doze'>
+
                 <div className="bannerFirst">
+
                     <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
                     <button className='bannerBtn' onClick={openModalSecond}>
                         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
@@ -118,9 +165,9 @@ const Banner = () => {
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
                             <div>
-                                <h3>Путь приёма</h3>
+                                <h3> Справочник "Путь приема"</h3>
                             </div>
-                            {itemsModalSecond.map((item, index) => (
+                            {itemsModalSecondBanner.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 
@@ -154,8 +201,111 @@ const Banner = () => {
                 )}
 
             </section>
-
-
+            <div className="seans">
+                <h4>Номера сеансов:</h4>
+                <button
+                    className={`seansBtn ${selectedButton === 1 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(1)}
+                >
+                    1
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 2 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(2)}
+                >
+                    2
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 3 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(3)}
+                >
+                    3
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 4 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(4)}
+                >
+                    4
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 5 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(5)}
+                >
+                    5
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 6 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(6)}
+                >
+                    6
+                </button>
+                <button
+                    className={`seansBtn ${selectedButton === 7 ? 'selected' : ''}`}
+                    onClick={() => handleButtonClick(7)}
+                >
+                    7
+                </button>
+            </div>
+            <section className='dateBlock'>
+                <div className="begginDate">
+                    <h3>Начало приёма</h3>
+                    <input type="date" name="begin" />
+                </div>
+                <div className="endnDate">
+                    <h3>Конец приёма</h3>
+                    <input type="date" name="begin" />
+                </div>
+                <div className='dateText'>Количество сеансов:3</div>
+            </section>
+            <div>
+                <button onClick={handleCreateRow}>Сформировать</button>
+            </div>
+            <div className="tablet">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Лекарство</th>
+                            <th>Путь приёма</th>
+                            <th>Начало приёма</th>
+                            <th>Конец приёма</th>
+                            <th>Номер сеанса</th>
+                            <th>Дней</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableData.map((row, index) => (
+                            <tr key={index}>
+                                <td>{row.medication}</td>
+                                <td>{row.path}</td>
+                                <td>{row.start}</td>
+                                <td>{row.end}</td>
+                                <td>{row.session}</td>
+                                <td>{row.days}</td>
+                                <td>
+                                    <img
+                                        src="../../../icons/delete.svg"
+                                        alt="Delete"
+                                        onClick={() => handleDeleteRow(row.id)}
+                                        style={{ cursor: 'pointer' }}
+                                    />
+                                </td>
+                            </tr>
+                        ))}
+                        {[...Array(8 - tableData.length)].map((_, index) => (
+                            <tr key={`empty-${index}`}>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

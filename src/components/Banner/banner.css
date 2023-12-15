@@ -29,5 +29,66 @@
 .bannerSecond{
     display: flex;
     align-items: center;
-    
 }
+.seans{
+    margin-top: 30px;
+}
+.seansBtn{
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+
+}
+.seansBtn.selected {
+    background-color: blue; /* Change background color when selected */
+  }
+  .dateBlock{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .begginDate{
+    margin-right: 20px;
+  }
+  .dateBlock input{
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal
+  }
+  .dateText{
+    font-weight: 500;
+    font-size: 15px;
+    color: black;
+display: flex;
+align-items: center;
+margin-top: 20px;
+margin-left: 20px;
+  }
+
+
+  .tablet {
+    width: 100%;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
