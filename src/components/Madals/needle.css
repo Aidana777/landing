@@ -44,7 +44,8 @@
 
 .modal {
   width: 580px;
-  height: 400px;
+  max-height: 80vh; /* Set a maximum height for the modal */
+  overflow-y: auto;
   background-color: #FFF;
   border-radius: 10px;
   border: 5px solid gray;
