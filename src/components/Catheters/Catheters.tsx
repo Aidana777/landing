@@ -217,21 +217,21 @@ const Catheters: React.FC = () => {
             <div className="formShow">
                 <h3>Назначения сеанса гемодиализа</h3>
                 <div className="formShowTab">
-                    <div className="listRow">
-                        <p>Программа</p>
-                        <p>Диализатор</p>
-                    </div>
-                    <div className="listRow">
-                        <p>Концентратор
-                            Объём</p>
+                    <ul className="listRow">
+                        <li className='listElem'>Программа</li>
+                        <li className='listElem'>Концентратор Объём</li>
+                        <li>Антикоагуляция ед.</li>
+                    </ul>
+                    <ul className="listRowTwo">
+                        <li className='listElem'>Диализатор</li>
+                        <li className='listElem'>Игла/Катетер</li>
+                        <li className='listElem'>Сухой вес кг.</li>
 
-                        <p>Игла/Катетер</p>
-                        <p>Бикарбонат мл</p>
-                    </div>
-                    <div className="listRow">
-                        <p>Антикоагуляция ед.</p>
-                        <p>Сухой вес кг.</p>
-                    </div>
+                    </ul>
+                    <li className="listRowThree">
+                        <li className='listElem'>Бикарбонат мл</li>
+
+                    </li>
                 </div>
             </div>
 

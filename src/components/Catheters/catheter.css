@@ -92,7 +92,7 @@
 
 .formShow {
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   padding: 10px;
 }
 
@@ -101,26 +101,17 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
-
-.formShowTab {
+.formShowTab{
   display: flex;
-  flex-direction: column;
-}
-
-.listRow {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 0 60px 80px 20px;
+}
+.listRowTwo{
+  margin-left:120px;
 }
 
-.listRow p {
-  margin-top: 0;
-}
-
-.listRow p:first-child {
-  margin-right: 10px;
-  
+.listRowThree{
+  margin-left: 120px;
 }
 
 .endStartText {

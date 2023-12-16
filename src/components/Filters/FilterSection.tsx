@@ -13,7 +13,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ title, placeholder, isNum
       <h3 className="medicalText">{title}</h3>
       <div className="box">
         <input
-          className={`inputField ${isNumericInput ? 'inputFieldLiq' : ''}`}
+          className={`inputField ${isNumericInput ? 'inputFieldLiq' : ''} ${title === 'Объем л.' ? 'widthAdjusted' : ''}`}
           type={isNumericInput ? 'number' : 'text'}
           placeholder={`Спр. '${placeholder}'`}
         />
@@ -27,7 +27,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ title, placeholder, isNum
       </div>
       {isNumericInput && (
         <div className="addInput">
-
+          
         </div>
       )}
     </section>

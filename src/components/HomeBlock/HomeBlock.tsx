@@ -93,7 +93,7 @@ const HomeBlock = () => {
         <div>
             <div className="container">
                 <h3>Лечение на дому</h3>
-                <p  className="content_Text">Лекарственный препарат</p>
+                <p >Лекарственный препарат</p>
             </div>
             <div className="modalSession">
                 <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
@@ -262,22 +262,19 @@ const HomeBlock = () => {
                 <div className="formShow">
                     <h3>Лечение на дому</h3>
                     <div className="formShowTab">
-                        <div className="listRow">
-                            <p>Лекарственный препарат
-                                Перорально</p>
-                            <p>значение</p>
-                        </div>
-                        <div className="listRow">
-                            <p>Концентратор
-                                Объём</p>
-
-                            <p>Игла/Катетер</p>
-                            <p>Бикарбонат мл</p>
-                        </div>
-                        <div className="listRow">
-                            <p>Антикоагуляция ед.</p>
-                            <p>Сухой вес кг.</p>
-                        </div>
+                        <ul className="listRow">
+                            <li className='listElem'>Лекарственный препарат
+                                Перорально
+                                5 мг</li>
+                         <li className='listElem'>2 раза в день утром и вечером</li>
+                        </ul>
+                        <ul className="listRowTwo">
+                            с 01.01.222 по 10.01.2022
+                        </ul >
+                       <ul className='listRowThree'>
+                       <li className='listElem'>10 дней</li>
+                       </ul>
+                    
                     </div>
                 </div>
 
