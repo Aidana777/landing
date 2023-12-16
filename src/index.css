@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: snow;
 }
 
 * {
@@ -30,4 +30,9 @@ li {
 
 span {
   color: deepskyblue;
+}
+h3,h4{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 17px;
 }

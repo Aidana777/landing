@@ -48,7 +48,7 @@ const TextBlock: React.FC = () => {
           <img src="../../../icons/doctor.svg" alt="" />
           <p>ФИО лечащего врача  Должность</p>
    </div>
-      <button>Сохранить назначения</button>
+      <button  className='addAllInfo'>Сохранить назначения</button>
     </div>
   );
 }

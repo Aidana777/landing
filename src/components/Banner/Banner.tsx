@@ -17,7 +17,7 @@ interface TableRow {
 const Banner: React.FC = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showDosageModal, setShowDosageModal] = useState(false);
-    const [selectedButton, setSelectedButton] = useState<number | null>(null);
+    const [selectedButtons, setSelectedButtons] = useState<number[]>([]);
     const [itemsModalSecondDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecond] = useState<string[]>(['доза 1', 'доза 2']); // Add your items
 
@@ -30,7 +30,13 @@ const Banner: React.FC = () => {
     };
 
     const handleButtonClick = (sessionNumber: number) => {
-        setSelectedButton(sessionNumber);
+        if (selectedButtons.includes(sessionNumber)) {
+            // Button is already selected, so remove it from the selectedButtons array
+            setSelectedButtons((prevSelected) => prevSelected.filter((num) => num !== sessionNumber));
+        } else {
+            // Button is not selected, so add it to the selectedButtons array
+            setSelectedButtons((prevSelected) => [...prevSelected, sessionNumber]);
+        }
     };
 
     return (
@@ -65,7 +71,7 @@ const Banner: React.FC = () => {
                         key={sessionNumber}
                         label={sessionNumber.toString()}
                         onClick={() => handleButtonClick(sessionNumber)}
-                        selected={selectedButton === sessionNumber}
+                        selected={selectedButtons.includes(sessionNumber)}
                     />
                 ))}
             </div>

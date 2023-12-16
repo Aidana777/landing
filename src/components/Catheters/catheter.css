@@ -12,10 +12,12 @@
   margin-top: 20px;
   margin-right: 15px;
 }
+
 .catheterModalSecond {
   margin-top: 20px;
   margin-right: 15px;
 }
+
 .inputCather {
   height: 40px;
   width: 250px;
@@ -27,29 +29,33 @@
 .catherBtn {
   margin-left: 15px;
 }
-.todosCather{
+
+.todosCather {
   display: flex;
   align-items: center;
 }
-.textAddedTodos{
+
+.textAddedTodos {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.modalInnerCather{
-padding: 10px;
+
+.modalInnerCather {
+  padding: 10px;
 }
+
 /* }mainBlock */
 .mainBlock {
   display: flex;
   align-items: center;
   margin-top: 30px;
- 
+
 }
 
 .subBlock {
   margin-right: 12px;
- 
+
 }
 
 .mainBtnImg {
@@ -58,23 +64,23 @@ padding: 10px;
 }
 
 /* Add styles for the button and input for better alignment */
-.mainBox{
- display: flex;
- align-items: center;
+.mainBox {
+  display: flex;
+  align-items: center;
 }
 
 .subBlock input,
 .subBlock button {
-  margin: 8px 0; 
+  margin: 8px 0;
   margin-right: 12px;
- 
+
 }
 
 .subBlockInput {
-font-size: 20px;
-font-style: normal;
-width: 230px;
-height: 40px;
+  font-size: 20px;
+  font-style: normal;
+  width: 230px;
+  height: 40px;
 }
 
 .smallBlockInput {
@@ -82,41 +88,49 @@ height: 40px;
   font-style: normal;
   width: 60px;
   height: 40px;
-  }
-  
-  .formShow {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
+}
+
+.formShow {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .formShow h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .formShowTab {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .listRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .listRow p {
-    margin-top: 0; /* Сбрасываем стандартный отступ */
+  margin-top: 0;
 }
 
 .listRow p:first-child {
-    margin-right: 10px; /* Задаем отступ только для первого элемента */
+  margin-right: 10px;
+  
 }
 
 .endStartText {
   display: flex;
   justify-content: flex-end;
+}
+
+.addAllInfo {
+  width: 200px;
+  height: 40px;
+  background-color: lightgray;
+  margin-top: 20px;
 }

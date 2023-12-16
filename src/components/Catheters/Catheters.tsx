@@ -213,7 +213,7 @@ const Catheters: React.FC = () => {
                 </div>
 
             </div>
-            <button>Сформировать сеанс</button>
+            <button className='addAllInfo'>Сформировать сеанс</button>
             <div className="formShow">
                 <h3>Назначения сеанса гемодиализа</h3>
                 <div className="formShowTab">

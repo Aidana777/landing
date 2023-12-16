@@ -93,7 +93,7 @@ const HomeBlock = () => {
         <div>
             <div className="container">
                 <h3>Лечение на дому</h3>
-                <p>Лекарственный препарат</p>
+                <p  className="content_Text">Лекарственный препарат</p>
             </div>
             <div className="modalSession">
                 <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
@@ -257,7 +257,7 @@ const HomeBlock = () => {
                 <p>Количество дней: <span>ХХ</span>  </p>
             </div>
             <div>
-                <button onClick={handleCreateRow}>Добавить</button>
+                <button onClick={handleCreateRow} className='addAllInfo'>Добавить</button>
 
                 <div className="formShow">
                     <h3>Лечение на дому</h3>
