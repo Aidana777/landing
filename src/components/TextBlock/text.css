@@ -1,6 +1,14 @@
 .recomedationTodos{
     margin-bottom: 20px;
-   
+    display: flex;
+    align-items: center;
+}
+.recomedationTodosInput{
+    width: 850px;
+    height: 40px;
+}
+.recomedationTodos button{
+    margin-left: 20px;
 }
 textarea{
     font-weight: 400;
@@ -18,5 +26,12 @@ textarea{
 .dataAndName img{
     width: 30px;
     height: 20px;
+    margin-left: 20px;
+}
+.dateAndTimeBlock{
+
+    margin-right: 60px;
+}
+.mainDataBlock p{
     margin-left: 20px;
 }

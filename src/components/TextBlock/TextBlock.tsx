@@ -36,7 +36,7 @@ const TextBlock: React.FC = () => {
             <img src="../../../icons/add.svg" alt="" />
           </button>
         </div>
-        <textarea placeholder='Рекомендации лечащего врача пациенту' rows={10} cols={120} name="text"></textarea>
+        <textarea placeholder='Рекомендации лечащего врача пациенту' rows={10} cols={107} name="text"></textarea>
       </div>
    <div className="mainDataBlock">
 
@@ -44,11 +44,9 @@ const TextBlock: React.FC = () => {
           <img src="../../../icons/calendar-month-schedule-time-date-svgrepo-com.svg" alt="" />
           <p>{currentDateTime}</p>
         </div>
-        <div className="doctorBlock">
+   
           <img src="../../../icons/doctor.svg" alt="" />
           <p>ФИО лечащего врача  Должность</p>
-        </div>
-
    </div>
       <button>Сохранить назначения</button>
     </div>
