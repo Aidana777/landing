@@ -1,13 +1,16 @@
+// Content.tsx
 import React, { useState } from 'react';
 import Filter from '../Filters/Filter';
 import './content.css';
 
 const Content = () => {
-  const [selectedProgram, setSelectedProgram] = useState<string>(''); // Updated type to string
+  const [selectedProgram, setSelectedProgram] = useState<string>('');
 
   const handleProgramSelect = (program: string) => {
     setSelectedProgram(program);
   };
+
+  const programOptions = ['HD', 'HDF', 'UF'];
 
   return (
     <div className="container">
@@ -16,24 +19,15 @@ const Content = () => {
         Программа аппарата Назначения сеанса гемодиализа
       </p>
       <div className="buttonChose">
-        <button
-          className={`contentItem ${selectedProgram === 'HD' ? 'selected' : ''}`}
-          onClick={() => handleProgramSelect('HD')}
-        >
-          HD
-        </button>
-        <button
-          className={`contentItem ${selectedProgram === 'HDF' ? 'selected' : ''}`}
-          onClick={() => handleProgramSelect('HDF')}
-        >
-          HDF
-        </button>
-        <button
-          className={`contentItem ${selectedProgram === 'UF' ? 'selected' : ''}`}
-          onClick={() => handleProgramSelect('UF')}
-        >
-          UF
-        </button>
+        {programOptions.map((program, index) => (
+          <button
+            key={index}
+            className={`contentItem ${selectedProgram === program ? 'selected' : ''}`}
+            onClick={() => handleProgramSelect(program)}
+          >
+            {program}
+          </button>
+        ))}
       </div>
       <Filter />
     </div>
