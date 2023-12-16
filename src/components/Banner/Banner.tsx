@@ -18,7 +18,7 @@ const Banner: React.FC = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showDosageModal, setShowDosageModal] = useState(false);
     const [selectedButton, setSelectedButton] = useState<number | null>(null);
-
+    const [itemsModalSecondDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecond] = useState<string[]>(['доза 1', 'доза 2']); // Add your items
 
     const closeModalFirst = () => {
@@ -51,15 +51,13 @@ const Banner: React.FC = () => {
             <Modal isOpen={showDosageModal} onClose={closeDosageModal}>
                 <div>
                     <h3>Справочник "Дозы препаратов"</h3>
-                    {itemsModalSecond.map((item, index) => (
+                    {itemsModalSecondDoza.map((item, index) => (
                         <div key={index} className="deleteBlock">
                             <p className="todosText">{item}</p>
                         </div>
                     ))}
                 </div>
             </Modal>
-
-            {/* Number of Sessions Buttons */}
             <div className="seans">
                 <h4>Номера сеансов:</h4>
                 {[1, 2, 3, 4, 5, 6, 7].map((sessionNumber) => (

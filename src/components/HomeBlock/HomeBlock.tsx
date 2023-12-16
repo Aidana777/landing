@@ -13,11 +13,10 @@ interface TableRow {
 const HomeBlock = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showModalSecond, setShowModalSecond] = useState(false);
-
-    const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
+    const [itemsModalDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
     const [selectedButton] = useState<number | null>(null);
-    const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '3 рад в день ']);
+    const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '1 рад в день ']);
 
     const [showDosageModal, setShowDosageModal] = useState(false);
 
@@ -203,7 +202,7 @@ const HomeBlock = () => {
                             <div>
                                 <h3>Справочник "Дозы препаратов"</h3>
                             </div>
-                            {itemsModalSecond.map((item, index) => (
+                            {itemsModalDoza.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 
