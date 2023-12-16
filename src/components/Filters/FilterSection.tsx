@@ -10,14 +10,14 @@ interface FilterSectionProps {
 const FilterSection: React.FC<FilterSectionProps> = ({ title, placeholder, isNumericInput = false }) => {
   return (
     <section className="block">
-      <h3 className="medicalText">{title}</h3>
+      <h3 className={`medicalText ${title === 'Объем л.' ? 'marginLeftAdjusted' : ''}`}>{title}</h3>
       <div className="box">
         <input
-          className={`inputField ${isNumericInput ? 'inputFieldLiq' : ''} ${title === 'Объем л.' ? 'widthAdjusted' : ''}`}
+          className={`inputField ${isNumericInput ? 'inputFieldLiq' : ''} ${title === 'Объем л.' ? 'widthAdjusted' : 'marginLeftAdjusted'}`}
           type={isNumericInput ? 'number' : 'text'}
           placeholder={`Спр. '${placeholder}'`}
         />
-        <button className="filterBtn">
+        <button className={`filterBtn ${title === 'Объем л.' ? 'marginLeftAdjusted' : ''}`}>
           <img
             className="btnImgMenu"
             src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
@@ -35,4 +35,3 @@ const FilterSection: React.FC<FilterSectionProps> = ({ title, placeholder, isNum
 };
 
 export default FilterSection;
-
