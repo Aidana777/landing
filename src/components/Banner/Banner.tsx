@@ -19,7 +19,7 @@ const Banner: React.FC = () => {
     const [showDosageModal, setShowDosageModal] = useState(false);
     const [selectedButtons, setSelectedButtons] = useState<number[]>([]);
     const [itemsModalSecondDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
-    const [itemsModalSecond] = useState<string[]>(['доза 1', 'доза 2']); // Add your items
+    
 
     const closeModalFirst = () => {
         setShowModalFirst(false);
