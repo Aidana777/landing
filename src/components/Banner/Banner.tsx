@@ -18,9 +18,10 @@ const Banner = () => {
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
     const [selectedButton, setSelectedButton] = useState<number | null>(null);
     const [showDosageModal, setShowDosageModal] = useState(false);
-
-    // ... (другие состояния)
-
+    const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
+    const handleRightArrowClick = (index: number) => {
+        setSelectedItemIndex(index);
+    };
     const openDosageModal = () => {
         setShowDosageModal(true);
     };
@@ -148,9 +149,9 @@ const Banner = () => {
                                                         <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='rightArrow'>
-                                                                <img src="../../../icons/right.svg" alt="" />
-                                                            </button>
+                                                        <button className={`rightArrow ${selectedItemIndex === index ? 'selectedArrow' : ''}`} onClick={() => handleRightArrowClick(index)}>
+                                                            <img src="../../../icons/right.svg" alt="" />
+                                                        </button>
                                                     </div>
                                                 </div>
                                             ))}

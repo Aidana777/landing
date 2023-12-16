@@ -104,3 +104,10 @@ margin-left: 20px;
   .endnDate{
     margin-left: 20px;
   }
+  .selectedBlock {
+    background-color: green; /* Измените на нужный вам цвет */
+  }
+  
+  .selectedText {
+    color: green; /* Измените на нужный вам цвет */
+  }
