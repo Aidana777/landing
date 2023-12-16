@@ -148,9 +148,9 @@ const Banner = () => {
                                                         <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='right'>
-                                                            <img src="../../../icons/right.svg" alt="" />
-                                                        </button>
+                                                        <button className='rightArrow'>
+                                                                <img src="../../../icons/right.svg" alt="" />
+                                                            </button>
                                                     </div>
                                                 </div>
                                             ))}

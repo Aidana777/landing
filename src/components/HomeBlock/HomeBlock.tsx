@@ -16,8 +16,8 @@ const HomeBlock = () => {
 
     const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
-        const [selectedButton] = useState<number | null>(null);
-        const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '3 рад в день ']);
+    const [selectedButton] = useState<number | null>(null);
+    const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '3 рад в день ']);
 
     const [showDosageModal, setShowDosageModal] = useState(false);
 
@@ -141,7 +141,7 @@ const HomeBlock = () => {
                                                         <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='right'>
+                                                        <button className='rightArrow'>
                                                             <img src="../../../icons/right.svg" alt="" />
                                                         </button>
                                                     </div>
@@ -221,7 +221,7 @@ const HomeBlock = () => {
                     <h3>Кратность приёма </h3>
                     <div className="bannerFirst">
 
-                        <input className='bannerInput' type="text" placeholder='Спр. "Кр-ть приема"' />
+                        <input className='dataInput' type="text" placeholder='Спр. "Кр-ть приема"' />
                         <button className='bannerBtn' onClick={openModalSecond}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
@@ -247,15 +247,40 @@ const HomeBlock = () => {
 
                 <div className="endnDate">
                     <h3>Начало приёма</h3>
-                    <input type="date" name="begin" />
+                    <input className='dataInput' type="date" name="begin" />
                 </div>
                 <div className="endnDate">
                     <h3>Конец приёма</h3>
-                    <input type="date" name="begin" />
+                    <input className='dataInput' type="date" name="begin" />
                 </div>
             </section>
+            <div className='endStartText'>
+                <p>Количество дней: <span>ХХ</span>  </p>
+            </div>
             <div>
                 <button onClick={handleCreateRow}>Добавить</button>
+
+                <div className="formShow">
+                    <h3>Лечение на дому</h3>
+                    <div className="formShowTab">
+                        <div className="listRow">
+                            <p>Лекарственный препарат
+                                Перорально</p>
+                            <p>значение</p>
+                        </div>
+                        <div className="listRow">
+                            <p>Концентратор
+                                Объём</p>
+
+                            <p>Игла/Катетер</p>
+                            <p>Бикарбонат мл</p>
+                        </div>
+                        <div className="listRow">
+                            <p>Антикоагуляция ед.</p>
+                            <p>Сухой вес кг.</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

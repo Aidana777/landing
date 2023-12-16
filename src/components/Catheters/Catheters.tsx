@@ -109,7 +109,7 @@ const Catheters: React.FC = () => {
                                                             <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                                 <img src="../../../icons/delete.svg" alt="" />
                                                             </button>
-                                                            <button className='deleteBtn'>
+                                                            <button className='rightArrow'>
                                                                 <img src="../../../icons/right.svg" alt="" />
                                                             </button>
                                                         </div>
@@ -214,7 +214,28 @@ const Catheters: React.FC = () => {
 
             </div>
             <button>Сформировать сеанс</button>
-            <section></section>
+            <div className="formShow">
+                <h3>Назначения сеанса гемодиализа</h3>
+                <div className="formShowTab">
+                    <div className="listRow">
+                        <p>Программа</p>
+                        <p>Диализатор</p>
+                    </div>
+                    <div className="listRow">
+                        <p>Концентратор
+                            Объём</p>
+
+                        <p>Игла/Катетер</p>
+                        <p>Бикарбонат мл</p>
+                    </div>
+                    <div className="listRow">
+                        <p>Антикоагуляция ед.</p>
+                        <p>Сухой вес кг.</p>
+                    </div>
+                </div>
+            </div>
+
+
             <Banner />
             <HomeBlock />
             <TextBlock />

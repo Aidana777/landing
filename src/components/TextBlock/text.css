@@ -1,0 +1,22 @@
+.recomedationTodos{
+    margin-bottom: 20px;
+   
+}
+textarea{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+.dateAndTimeBlock{
+    display: flex;
+    align-items: center;
+}
+.mainDataBlock{
+    display: flex;
+    align-items: center;
+}
+.dataAndName img{
+    width: 30px;
+    height: 20px;
+    margin-left: 20px;
+}
