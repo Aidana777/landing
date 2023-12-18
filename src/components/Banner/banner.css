@@ -1,113 +1,124 @@
 .modalSession {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .bannerInput {
-    height: 40px;
-    width: 250px;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal;
+  height: 40px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .bannerBtn {
-    margin-left: 12px;
+  margin-left: 12px;
 }
-.doze  {
-    display: flex;
-    align-self: center;
-    margin-top: 30px;
-    margin-right: 20px;
+
+.doze {
+  display: flex;
+  align-self: center;
+  margin-top: 30px;
+  margin-right: 20px;
 
 }
-.bannerFirst{
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+
+.bannerFirst {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 }
-.bannerSecond{
-    display: flex;
-    align-items: center;
+
+.bannerSecond {
+  display: flex;
+  align-items: center;
 }
-.seans{
-    margin-top: 30px;
+
+.seans {
+  margin-top: 30px;
 }
-.seansBtn{
-    width: 50px;
-    height: 50px;
-    margin-right: 25px;
+
+.seansBtn {
+  width: 50px;
+  height: 50px;
+  margin-right: 25px;
 
 }
+
 .seansBtn.selected {
-    background-color: blue; /* Change background color when selected */
-  }
-  .dateBlock{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-  }
-  .begginDate{
-    margin-right: 20px;
-  }
-  .dateBlock input{
-    height: 40px;
-    width: 261px;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal
-  }
-  .dateText{
-    font-weight: 500;
-    font-size: 15px;
-    color: black;
-display: flex;
-align-items: center;
-margin-top: 20px;
-margin-left: 20px;
-  }
+  background-color: blue;
+  /* Change background color when selected */
+}
+
+.dateBlock {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.begginDate {
+  margin-right: 20px;
+}
+
+.dateBlock input {
+  height: 40px;
+  width: 261px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal
+}
+
+.dateText {
+  font-weight: 500;
+  font-size: 15px;
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
 
 
-  .tablet {
-    width: 100%;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #f5f5f5;
-  }
-  .todosText {
-    font-size: 17px;
-    font-weight: 400;
-    color: #000;
-    font-style: normal;
-    padding: 15px;
-  }
-  .selectedText {
-    color: green; /* Set your desired highlight color */
-  }
-  .endnDate{
-    margin-left: 20px;
-  }
-  .selectedBlock {
-    background-color: green; /* Измените на нужный вам цвет */
-  }
-  
-  .selectedText {
-    color: green; /* Измените на нужный вам цвет */
-  }
+.tablet {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.selectedText {
+  color: green;
+  /* Set your desired highlight color */
+}
+
+.endnDate {
+  margin-left: 20px;
+}
+
+.selectedBlock {
+  background-color: green;
+  /* Измените на нужный вам цвет */
+}
+
+.selectedText {
+  color: green;
+  /* Измените на нужный вам цвет */
+}

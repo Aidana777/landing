@@ -49,7 +49,6 @@ const Banner: React.FC = () => {
             {/* Medication Modal */}
             <Modal isOpen={showModalFirst} onClose={closeModalFirst}>
                 <div className="inner innerModalFirst">
-                    {/* ... (content for Medication Modal) */}
                 </div>
             </Modal>
 

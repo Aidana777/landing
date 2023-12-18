@@ -24,15 +24,12 @@ const HomeBlock = () => {
         setShowDosageModal(true);
     };
 
-
     const closeDosageModal = () => {
         setShowDosageModal(false);
     };
-
     const openModalSecond = () => {
         setShowModalSecond(true);
     };
-
     const closeModalSecond = () => {
         setShowModalSecond(false);
     };
@@ -44,7 +41,6 @@ const HomeBlock = () => {
     const closeModalFirst = () => {
         setShowModalFirst(false);
     };
-
     const handleInputChangeFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValueFirst(e.target.value);
     };
@@ -131,23 +127,26 @@ const HomeBlock = () => {
                                         </div>
                                     </div>
 
-                                    <section className="textTodosBlocks">
-                                        <div className="textDelete">
+                                    <section className='textDelete'>
+                                        <ul>
                                             {itemsModalFirst.map((item, index) => (
-                                                <div key={index} className="deleteBlock">
-                                                    <p className='todosText'>{item}</p>
-                                                    <div className="boxBtn">
-                                                        <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
+                                                <div className="textList">
+                                                    <li className='innerTextAlem' key={index}>
+                                                        {item}
+                                                        <button
+                                                            className="deleteBtn"
+                                                            onClick={() => handleRemoveItemFirst(index)}
+                                                        >
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='rightArrow'>
-                                                            <img src="../../../icons/right.svg" alt="" />
-                                                        </button>
-                                                    </div>
+
+                                                    </li>
+                                                    <button className='rightArrow'>
+                                                        <img src="../../../icons/right.svg" alt="" />
+                                                    </button>
                                                 </div>
                                             ))}
-
-                                        </div>
+                                        </ul>
 
                                     </section>
                                 </div>
@@ -266,15 +265,15 @@ const HomeBlock = () => {
                             <li className='listElem'>Лекарственный препарат
                                 Перорально
                                 5 мг</li>
-                         <li className='listElem'>2 раза в день утром и вечером</li>
+                            <li className='listElem'>2 раза в день утром и вечером</li>
                         </ul>
                         <ul className="listRowTwo">
                             с 01.01.222 по 10.01.2022
                         </ul >
-                       <ul className='listRowThree'>
-                       <li className='listElem'>10 дней</li>
-                       </ul>
-                    
+                        <ul className='listRowThree'>
+                            <li className='listElem'>10 дней</li>
+                        </ul>
+
                     </div>
                 </div>
 

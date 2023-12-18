@@ -18,22 +18,57 @@ body {
   margin: 0 auto;
 }
 
-img {
-  width: 40px;
-  height: 30px;
-}
+
 
 ul,
 li {
   list-style: none;
-  margin-top: 20px;
+  
 }
 
 span {
   color: deepskyblue;
 }
-h3,h4{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 17px;
+img {
+  width: 40px;
+  height: 30px;
+}
+/* Add this CSS to your stylesheets or components */
+
+/* modal window */
+.centerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  width: 580px;
+  max-height: 80vh; /* Set a maximum height for the modal */
+  overflow-y: auto;
+  background-color: #FFF;
+  border-radius: 10px;
+  border: 5px solid gray;
+  overflow: auto;
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #000000;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 150px;
+  height: 20px;
 }
