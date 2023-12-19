@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Modal from '../ModalProps/ModalProps';
 
 interface TableRow {
     id: number;
@@ -19,6 +20,15 @@ const HomeBlock = () => {
     const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '1 рад в день ']);
 
     const [showDosageModal, setShowDosageModal] = useState(false);
+    const [showModalBanner, setShowModalBanner] = useState(false);
+
+    const openModalBanner = () => {
+        setShowModalBanner(true);
+    };
+
+    const closeModalBanner = () => {
+        setShowModalBanner(false);
+    };
 
     const openDosageModal = () => {
         setShowDosageModal(true);
@@ -169,15 +179,15 @@ const HomeBlock = () => {
                 {showDosageModal && (
                     <div className="centerModal" onClick={closeDosageModal}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
-                            <div>
-                                <h3>Справочник "Дозы "</h3>
+                            <div className="blockTiteCarbont">
+                                <h3 className='listCarbonModalTitle'>Справочник "Путь приема"</h3>
                             </div>
-                            {itemsModalDoza.map((item, index) => (
-                                <div key={index} className="deleteBlock">
-                                    <p className='todosText'>{item}</p>
-
+                            {itemsModalSecondBanner.map((item, index) => (
+                                <div key={index} className='listCarbonModal'>
+                                    <p className='listCarboneText'>{item}</p>
                                 </div>
                             ))}
+
                         </div>
                     </div>
                 )}
@@ -198,13 +208,12 @@ const HomeBlock = () => {
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
-                            <div>
-                                <h3>Справочник "Дозы препаратов"</h3>
+                            <div className="blockTiteCarbont">
+                                <h3 className='listCarbonModalTitle'>Справочник "Дозы препаратов"</h3>
                             </div>
                             {itemsModalDoza.map((item, index) => (
-                                <div key={index} className="deleteBlock">
-                                    <p className='todosText'>{item}</p>
-
+                                <div key={index} className='listCarbonModal'>
+                                    <p className='listCarboneText'>{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -220,28 +229,30 @@ const HomeBlock = () => {
                     <div className="bannerFirst">
 
                         <input className='dataInput' type="text" placeholder='Спр. "Кр-ть приема"' />
-                        <button className='bannerBtn' onClick={openModalSecond}>
+                        <button className='bannerBtn' onClick={openModalBanner}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
 
                     </div>
-                </div>
+                    {showModalBanner && (
+                        <Modal isOpen={showModalBanner} onClose={closeModalBanner}>
 
-                {showModalSecond && (
-                    <div className="centerModal" onClick={closeModalSecond}>
-                        <div className="modal" onClick={(e) => e.stopPropagation()}>
-                            <div>
-                                <h3>Справочник "Кратность приема"</h3>
-                            </div>
-                            {itemsModalDays.map((item, index) => (
-                                <div key={index} className="deleteBlock">
-                                    <p className='todosText'>{item}</p>
-
+                            <div className="modalContent">
+                                {/* trhhnthbtgbhthtg */}
+                                <div className="blockTiteCarbont">
+                                    <h3 className='listCarbonModalTitle'>Справочник "Кратность приема"</h3>
+                                </div>
+                                {itemsModalDays.map((item, index) => (
+                                <div key={index} className='listCarbonModal'>
+                                    <p className='listCarboneText'>{item}</p>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                )}
+                            </div>
+                        </Modal>
+                    )}
+                </div>
+
+
 
                 <div className="endnDate">
                     <h3>Начало приёма</h3>
@@ -264,12 +275,12 @@ const HomeBlock = () => {
                     <ul className='listFirstTotal'>
                         <li>Лекарственный препарат</li>
                         <li>2 раза в день утром и вечером</li>
-                      
+
                     </ul>
                     <ul className='listSecondTotal'>
                         <li>Перорально 5 мг</li>
                         <li> с 01.01.222 по 10.01.2022</li>
-                      
+
                     </ul>
                     <ul className='listThirdtTotal'>
                         <li>10 дней </li>

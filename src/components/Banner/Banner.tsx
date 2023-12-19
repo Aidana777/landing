@@ -125,25 +125,28 @@ const Banner = () => {
                                         </div>
                                     </div>
 
-                                    <section className="textTodosBlocks">
-                                        <div className="textDelete">
+
+                                    <section className='textDelete'>
+                                        <ul>
                                             {itemsModalFirst.map((item, index) => (
-                                                <div key={index} className="deleteBlock">
-                                                    <p className='todosText'>{item}</p>
-                                                    <div className="boxBtn">
-                                                        <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
+                                                <div className="textList" key={index}>
+                                                    <li className='innerTextAlem'>
+                                                        {item}
+                                                        <button
+                                                            className="deleteBtn"
+                                                            onClick={() => handleRemoveItemFirst(index)}
+                                                        >
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                        <button className='deleteBtn'>
-                                                            <img src="../../../icons/right.svg" alt="" />
-                                                        </button>
-                                                    </div>
+                                                    </li>
+                                                    <button className='rightArrow'>
+                                                        <img src="../../../icons/right.svg" alt="" />
+                                                    </button>
                                                 </div>
                                             ))}
-
-                                        </div>
-
+                                        </ul>
                                     </section>
+
                                 </div>
                             </div>
                         </div>
@@ -154,7 +157,7 @@ const Banner = () => {
 
                 <div className="bannerFirst">
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
+                    <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
                     <button className='bannerBtn' onClick={openModalSecond}>
                         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                     </button>
@@ -178,8 +181,7 @@ const Banner = () => {
                 )}
 
                 <div className="bannerSecond">
-
-                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
+                    <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
                     <button className='bannerBtn' onClick={openModalSecond}>
                         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                     </button>

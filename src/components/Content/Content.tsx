@@ -26,7 +26,14 @@ const Content = () => {
 
   const [needleTypeContent, setNeedleTypeContent] = useState<string>('');
   const [catheterTypeContent, setCatheterTypeContent] = useState<string>('');
-  const [isModalOpenBar, setIsModalOpenBar] = useState(false);
+  const [showModalBanner, setShowModalBanner] = useState(false);
+  const openModalBanner = () => {
+    setShowModalBanner(true);
+};
+
+const closeModalBanner = () => {
+    setShowModalBanner(false);
+};
 
   const handleRemoveItemFirst = (index: number) => {
     setItemsModalFirst((prevItems) => prevItems.filter((_, i) => i !== index));
@@ -68,7 +75,6 @@ const Content = () => {
     setIsModalOpen(false);
     setIsNeedleTypeModalOpen(false);
     setIsCatheterTypeModalOpen(false);
-    setIsModalOpenBar(false);
     setModalContent('');
     setNeedleTypeContent('');
     setCatheterTypeContent('');
@@ -261,12 +267,12 @@ const Content = () => {
         </Modal>
       </div>
 
-      <div className="cantainerCarbonen" onClick={() => setIsModalOpenBar(true)}>
+      <div className="cantainerCarbonen">
         <div className="boxCarbone">
           <h3 className='carboneText'>Бикарбонат</h3>
           <div className="blockCarbone">
             <input type="text" className='blockCarbonInput' placeholder='ХХХ гр / л' />
-            <button className='carboneBtn'>
+            <button className='carboneBtn'  onClick={openModalBanner}>
               <img
                 src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
                 alt=""
@@ -275,23 +281,25 @@ const Content = () => {
           </div>
         </div>
 
-        {isModalOpenBar && (
-          <Modal isOpen={isModalOpenBar} onClose={() => setIsModalOpenBar(false)}>
-            <div className="blockTiteCarbont">
+        {showModalBanner && (
+    <Modal isOpen={showModalBanner} onClose={closeModalBanner}>
+        <div className="modalContent">
+        <div className="blockTiteCarbont">
               <h3 className='listCarbonModalTitle'>Справочник "Бикарбонат"</h3>
             </div>
             <div className="listCarbonModal">
               <p className='listCarboneText'> граммов</p>
               <p className='listCarboneText'> литров</p>
             </div>
-          </Modal>
-        )}
+        </div>
+    </Modal>
+)}
 
 
         <div className="boxCarbone">
           <h3 className='carboneText'>Сухой Вес пациента</h3>
           <div className="blockCarbone">
-            <input type="text" className='blockCarbonInputSmall' placeholder='ХХХ кг' />
+            <input type="number" className='blockCarbonInputSmall' placeholder='ХХХ кг' />
           </div>
         </div>
 
@@ -310,7 +318,7 @@ const Content = () => {
         <div className="boxCarbone">
           <h3 className='carboneText'>Объем</h3>
           <div className="blockCarbone">
-            <input type="text" className='blockCarbonInputSmall' placeholder='ХХХ ед' />
+            <input type="number" className='blockCarbonInputSmall' placeholder='ХХХ ед' />
           </div>
         </div>
       </div>
