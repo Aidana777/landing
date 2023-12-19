@@ -63,10 +63,10 @@ const Banner = () => {
 
     const [inputValueFirst, setInputValueFirst] = useState('');
     const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
-        'Игла размер №1',
-        'Игла размер №2',
-        'Игла размер №4',
-        'Игла размер №4',
+        'Лекарственный препарат №1',
+        'Лекарственный препарат №2',
+        'Лекарственный препарат №3',
+        'Лекарственный препарат №4',
     ]);
 
     const handleCreateRow = () => {
@@ -86,8 +86,8 @@ const Banner = () => {
     return (
         <div>
             <div className="container">
-                <h3>Назначения после сеанса</h3>
-                <p>Лекарственный препарат</p>
+                <h3 className='bannerTitle'>Назначения после сеанса</h3>
+                <p className='coinText'>Лекарственный препарат</p>
             </div>
             <div className="modalSession">
                 <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
@@ -155,12 +155,16 @@ const Banner = () => {
             </div>
             <section className='doze'>
 
-                <div className="bannerFirst">
+                <div>
+                    <h3 className='inputCardText'>Путь приёма</h3>
+                    <div className="bannerFirst">
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
-                    <button className='bannerBtn' onClick={openModalSecond}>
-                        <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-                    </button>
+                        <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -179,13 +183,16 @@ const Banner = () => {
                         </div>
                     </div>
                 )}
-
-                <div className="bannerSecond">
-                    <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
-                    <button className='bannerBtn' onClick={openModalSecond}>
-                        <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-                    </button>
+                <div>
+                    <h3 className='inputCardText'>Дозировка</h3>
+                    <div className="bannerSecond">
+                        <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
+                        <button className='bannerBtn' onClick={openModalSecond}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
+                    </div>
                 </div>
+
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -260,7 +267,7 @@ const Banner = () => {
                 <div className='dateText'>Количество сеансов:3</div>
             </section>
             <div>
-                <button onClick={handleCreateRow}>Сформировать</button>
+                <button onClick={handleCreateRow} className='totalBtn'>Сформировать</button>
             </div>
             <div className="tablet">
                 <table>

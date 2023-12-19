@@ -72,13 +72,12 @@ const HomeBlock = () => {
     ]);
 
 
-
     const [inputValueFirst, setInputValueFirst] = useState('');
     const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
-        'Игла размер №1',
-        'Игла размер №2',
-        'Игла размер №4',
-        'Игла размер №4',
+        'Лекарственный препарат №1',
+        'Лекарственный препарат №2',
+        'Лекарственный препарат №3',
+        'Лекарственный препарат №4',
     ]);
 
     const handleCreateRow = () => {
@@ -98,8 +97,8 @@ const HomeBlock = () => {
     return (
         <div>
             <div className="container">
-                <h3>Лечение на дому</h3>
-                <p >Лекарственный препарат</p>
+                <h3 className='bannerTitle'>Лечение на дому</h3>
+                <h3 >Лекарственный препарат</h3>
             </div>
             <div className="modalSession">
                 <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
@@ -243,10 +242,10 @@ const HomeBlock = () => {
                                     <h3 className='listCarbonModalTitle'>Справочник "Кратность приема"</h3>
                                 </div>
                                 {itemsModalDays.map((item, index) => (
-                                <div key={index} className='listCarbonModal'>
-                                    <p className='listCarboneText'>{item}</p>
-                                </div>
-                            ))}
+                                    <div key={index} className='listCarbonModal'>
+                                        <p className='listCarboneText'>{item}</p>
+                                    </div>
+                                ))}
                             </div>
                         </Modal>
                     )}
@@ -267,7 +266,7 @@ const HomeBlock = () => {
                 <p>Количество дней: <span>ХХ</span>  </p>
             </div>
             <div>
-                <button onClick={handleCreateRow} className='addAllInfo'>Добавить</button>
+                <button onClick={handleCreateRow} className='totalBtn'>Добавить</button>
 
                 <h3>Лечение на дому</h3>
 

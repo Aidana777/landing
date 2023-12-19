@@ -29,7 +29,7 @@ const TextBlock: React.FC = () => {
   return (
     <div>
       <div>
-        <h3>Рекомендации</h3>
+        <h3 className='bannerTitle'>Рекомендации</h3>
         <div className="recomedationTodos">
           <input type="text" className='recomedationTodosInput' placeholder='Текст рекомендации пациенту' />
           <button className='addBtn'>
@@ -48,7 +48,7 @@ const TextBlock: React.FC = () => {
           <img src="../../../icons/doctor.svg" alt="" />
           <p>ФИО лечащего врача  Должность</p>
    </div>
-      <button  className='addAllInfo'>Сохранить назначения</button>
+      <button  className='totalBtn'>Сохранить назначения</button>
     </div>
   );
 }

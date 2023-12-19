@@ -4,12 +4,11 @@
 
 }
 
-.header-title { 
-    font-size: 48px;
+.header-title {
+    font-size: 65px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 58px;
-    width: 470px;
+    font-weight: 700;
+    line-height: 120%;
 
 }
 

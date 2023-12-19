@@ -29,11 +29,11 @@ const Content = () => {
   const [showModalBanner, setShowModalBanner] = useState(false);
   const openModalBanner = () => {
     setShowModalBanner(true);
-};
+  };
 
-const closeModalBanner = () => {
+  const closeModalBanner = () => {
     setShowModalBanner(false);
-};
+  };
 
   const handleRemoveItemFirst = (index: number) => {
     setItemsModalFirst((prevItems) => prevItems.filter((_, i) => i !== index));
@@ -272,7 +272,7 @@ const closeModalBanner = () => {
           <h3 className='carboneText'>Бикарбонат</h3>
           <div className="blockCarbone">
             <input type="text" className='blockCarbonInput' placeholder='ХХХ гр / л' />
-            <button className='carboneBtn'  onClick={openModalBanner}>
+            <button className='carboneBtn' onClick={openModalBanner}>
               <img
                 src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
                 alt=""
@@ -282,18 +282,18 @@ const closeModalBanner = () => {
         </div>
 
         {showModalBanner && (
-    <Modal isOpen={showModalBanner} onClose={closeModalBanner}>
-        <div className="modalContent">
-        <div className="blockTiteCarbont">
-              <h3 className='listCarbonModalTitle'>Справочник "Бикарбонат"</h3>
+          <Modal isOpen={showModalBanner} onClose={closeModalBanner}>
+            <div className="modalContent">
+              <div className="blockTiteCarbont">
+                <h3 className='listCarbonModalTitle'>Справочник "Бикарбонат"</h3>
+              </div>
+              <div className="listCarbonModal">
+                <p className='listCarboneText'> граммов</p>
+                <p className='listCarboneText'> литров</p>
+              </div>
             </div>
-            <div className="listCarbonModal">
-              <p className='listCarboneText'> граммов</p>
-              <p className='listCarboneText'> литров</p>
-            </div>
-        </div>
-    </Modal>
-)}
+          </Modal>
+        )}
 
 
         <div className="boxCarbone">
@@ -322,7 +322,7 @@ const closeModalBanner = () => {
           </div>
         </div>
       </div>
-
+      <button className='totalBtn'>Сформировать сеанс</button>
 
       <div className="totalBlock">
 
