@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Modal from '../ModalProps/ModalProps';
 import './banner.css'
 
 interface TableRow {
@@ -34,10 +33,9 @@ const Banner = () => {
         setShowModalFirst(true);
     };
 
-    const closeModal = () => {
-        setSelectedButton(null);
+    const closeModalFirst = () => {
+        setShowModalFirst(false);
     };
-
 
     const handleInputChangeFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValueFirst(e.target.value);
@@ -97,70 +95,66 @@ const Banner = () => {
                     <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                 </button>
                 {showModalFirst && (
-                    <Modal isOpen={showModalFirst} onClose={closeModal}>
-                        <div className="needleInnerModal">
-                            <div className="needleInnerModal">
-                                <h3>Лекарственные препараты</h3>
-                                <button onClick={closeModal}>Закрыть</button>
-                                <div className="innerFoms">
-                                    <div className="starchForm">
-                                        <input
-                                            className="inerField"
-                                            type="text"
-                                            placeholder="Поиск позиции по первым символам"
-                                        />
-                                        <button className="innerBtn">
-                                            <img
-                                                src="../../../icons/search-svgrepo-com.svg"
-                                                alt=""
+                    <div className="centerModal" onClick={closeModalFirst}>
+                        <div className="modal" onClick={(e) => e.stopPropagation()}>
+                            <div className="modal-content">
+                                <div className=" inner  innerModalFirst">
+                                    <h3>Лекарственные препараты</h3>
+                                    <button className='closeModal' onClick={closeModalFirst}>Закрыть</button>
+                                    <div className="innerFoms">
+                                        <div className="starchForm">
+                                            <input className='inerField'
+                                                type="text"
+                                                placeholder='Поиск позиции по первым символам'
                                             />
-                                        </button>
+                                            <button className='innerBtn'>
+                                                <img src="../../../icons/search-svgrepo-com.svg" alt="" />
+                                            </button>
+                                        </div>
+
+                                        <div className="innerTodos">
+                                            <input
+                                                className='inerField'
+                                                type="text"
+                                                placeholder='Добавить новую запись'
+                                                onChange={handleInputChangeFirst}
+                                            />
+                                            <button className='innerBtn' onClick={handleAddItemFirst}>
+                                                <img src="../../../icons/add.svg" alt="" />
+                                            </button>
+                                        </div>
                                     </div>
 
-                                    <div className="innerTodos">
-                                        <input
-                                            className="inerField"
-                                            type="text"
-                                            placeholder="Добавить новую запись"
-                                            value={inputValueFirst}
-                                            onChange={handleInputChangeFirst}
-                                        />
-                                        <button className="innerBtn" onClick={handleAddItemFirst}>
-                                            <img src="../../../icons/add.svg" alt="" />
-                                        </button>
-                                    </div>
-                                    <section className='textDelete'>
-                                        <ul>
+                                    <section className="textTodosBlocks">
+                                        <div className="textDelete">
                                             {itemsModalFirst.map((item, index) => (
-                                                <div className="textList" key={index}>
-                                                    <li className='innerTextAlem'>
-                                                        {item}
-                                                        <button
-                                                            className="deleteBtn"
-                                                            onClick={() => handleRemoveItemFirst(index)}
-                                                        >
+                                                <div key={index} className="deleteBlock">
+                                                    <p className='todosText'>{item}</p>
+                                                    <div className="boxBtn">
+                                                        <button className="deleteBtn" onClick={() => handleRemoveItemFirst(index)}>
                                                             <img src="../../../icons/delete.svg" alt="" />
                                                         </button>
-                                                    </li>
-                                                    <button className='rightArrow'>
-                                                        <img src="../../../icons/right.svg" alt="" />
-                                                    </button>
+                                                        <button className='deleteBtn'>
+                                                            <img src="../../../icons/right.svg" alt="" />
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             ))}
-                                        </ul>
+
+                                        </div>
+
                                     </section>
                                 </div>
                             </div>
                         </div>
-                    </Modal>
+                    </div>
                 )}
-
             </div>
             <section className='doze'>
 
                 <div className="bannerFirst">
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
+                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
                     <button className='bannerBtn' onClick={openModalSecond}>
                         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                     </button>
@@ -185,7 +179,7 @@ const Banner = () => {
 
                 <div className="bannerSecond">
 
-                    <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
+                    <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
                     <button className='bannerBtn' onClick={openModalSecond}>
                         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                     </button>

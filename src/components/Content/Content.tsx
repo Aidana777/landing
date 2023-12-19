@@ -6,6 +6,7 @@ import Modal from '../ModalProps/ModalProps';
 import './content.css';
 import Banner from '../Banner/Banner';
 import TextBlock from '../TextBlock/TextBlock';
+import HomeBlock from '../HomeBlock/HomeBlock';
 
 const Content = () => {
   const [selectedProgram, setSelectedProgram] = useState<string>('');
@@ -337,7 +338,9 @@ const Content = () => {
 
 
       </div>
+
       <Banner />
+      <HomeBlock />
       <TextBlock />
     </div>
   );

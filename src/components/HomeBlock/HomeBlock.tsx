@@ -172,7 +172,7 @@ const HomeBlock = () => {
                             <div>
                                 <h3>Справочник "Дозы "</h3>
                             </div>
-                            {itemsModalDays.map((item, index) => (
+                            {itemsModalDoza.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 
@@ -201,7 +201,7 @@ const HomeBlock = () => {
                             <div>
                                 <h3>Справочник "Дозы препаратов"</h3>
                             </div>
-                            {itemsModalSecondBanner.map((item, index) => (
+                            {itemsModalDoza.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 
@@ -258,23 +258,22 @@ const HomeBlock = () => {
             <div>
                 <button onClick={handleCreateRow} className='addAllInfo'>Добавить</button>
 
-                <div className="formShow">
-                    <h3>Лечение на дому</h3>
-                    <div className="formShowTab">
-                        <ul className="listRow">
-                            <li className='listElem'>Лекарственный препарат
-                                Перорально
-                                5 мг</li>
-                            <li className='listElem'>2 раза в день утром и вечером</li>
-                        </ul>
-                        <ul className="listRowTwo">
-                            с 01.01.222 по 10.01.2022
-                        </ul >
-                        <ul className='listRowThree'>
-                            <li className='listElem'>10 дней</li>
-                        </ul>
+                <h3>Лечение на дому</h3>
 
-                    </div>
+                <div className="listTotalBlock">
+                    <ul className='listFirstTotal'>
+                        <li>Лекарственный препарат</li>
+                        <li>2 раза в день утром и вечером</li>
+                      
+                    </ul>
+                    <ul className='listSecondTotal'>
+                        <li>Перорально 5 мг</li>
+                        <li> с 01.01.222 по 10.01.2022</li>
+                      
+                    </ul>
+                    <ul className='listThirdtTotal'>
+                        <li>10 дней </li>
+                    </ul>
                 </div>
 
             </div>
