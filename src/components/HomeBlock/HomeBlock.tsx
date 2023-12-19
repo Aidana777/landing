@@ -170,9 +170,9 @@ const HomeBlock = () => {
                     <div className="centerModal" onClick={closeDosageModal}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
                             <div>
-                                <h3>Справочник "Дозы препаратов"</h3>
+                                <h3>Справочник "Дозы "</h3>
                             </div>
-                            {itemsModalSecondBanner.map((item, index) => (
+                            {itemsModalDays.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 
@@ -201,7 +201,7 @@ const HomeBlock = () => {
                             <div>
                                 <h3>Справочник "Дозы препаратов"</h3>
                             </div>
-                            {itemsModalDoza.map((item, index) => (
+                            {itemsModalSecondBanner.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
 

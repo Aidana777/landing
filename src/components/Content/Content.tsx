@@ -1,13 +1,17 @@
+// Content.tsx
+
 import React, { useState } from 'react';
 import ThreeBtnItem from '../ThreeBtnItem/ThreeBtnItem';
 import Modal from '../ModalProps/ModalProps';
 import './content.css';
+import Banner from '../Banner/Banner';
+import TextBlock from '../TextBlock/TextBlock';
 
 const Content = () => {
   const [selectedProgram, setSelectedProgram] = useState<string>('');
   const [selectedButton, setSelectedButton] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalContent, setModalContent] = useState<string>('');
+  const [, setModalContent] = useState<string>('');
   const [inputValueFirst, setInputValueFirst] = useState('');
   const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
     'Игла размер №1',
@@ -21,6 +25,7 @@ const Content = () => {
 
   const [needleTypeContent, setNeedleTypeContent] = useState<string>('');
   const [catheterTypeContent, setCatheterTypeContent] = useState<string>('');
+  const [isModalOpenBar, setIsModalOpenBar] = useState(false);
 
   const handleRemoveItemFirst = (index: number) => {
     setItemsModalFirst((prevItems) => prevItems.filter((_, i) => i !== index));
@@ -62,10 +67,11 @@ const Content = () => {
     setIsModalOpen(false);
     setIsNeedleTypeModalOpen(false);
     setIsCatheterTypeModalOpen(false);
-    // Reset content when modal is closed
+    setIsModalOpenBar(false);
     setModalContent('');
     setNeedleTypeContent('');
     setCatheterTypeContent('');
+    setSelectedButton(null);
   };
 
   const renderContent = () => {
@@ -73,6 +79,8 @@ const Content = () => {
       const placeholder1 = selectedButton === 'Игла' ? 'Спр. "Иглы"' : 'Спр. "Катетеры"';
       const placeholder2 =
         selectedButton === 'Игла' ? 'Спр. "Типы иглы"' : 'Спр. "Типы катетеров"';
+      const modalContent = selectedButton === 'Игла' ? needleTypeContent : catheterTypeContent;
+
       return (
         <div className="injectionContent">
           <div className="injectionContentBox">
@@ -83,7 +91,7 @@ const Content = () => {
             />
             <button
               className="injectionContentBtn"
-              onClick={() => openModal('Content for Игла')}
+              onClick={() => openModal(modalContent)}
             >
               <img
                 src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
@@ -99,7 +107,7 @@ const Content = () => {
             />
             <button
               className="injectionContentBtn"
-              onClick={() => openModal('Content for Катетер')}
+              onClick={() => openModal(modalContent)}
             >
               <img
                 src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
@@ -171,59 +179,60 @@ const Content = () => {
 
         {renderContent()}
 
-        {/* Updated modal content based on the selected button */}
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           {selectedButton === 'Игла' && (
             <div className="needleInnerModal">
-              <h3>Лекарственные препараты</h3>
-              <button onClick={closeModal}>Закрыть</button>
-              <div className="innerFoms">
-                <div className="starchForm">
-                  <input
-                    className="inerField"
-                    type="text"
-                    placeholder="Поиск позиции по первым символам"
-                  />
-                  <button className="innerBtn">
-                    <img
-                      src="../../../icons/search-svgrepo-com.svg"
-                      alt=""
+              <div className="needleInnerModal">
+                <h3>Лекарственные препараты</h3>
+                <button onClick={closeModal}>Закрыть</button>
+                <div className="innerFoms">
+                  <div className="starchForm">
+                    <input
+                      className="inerField"
+                      type="text"
+                      placeholder="Поиск позиции по первым символам"
                     />
-                  </button>
-                </div>
+                    <button className="innerBtn">
+                      <img
+                        src="../../../icons/search-svgrepo-com.svg"
+                        alt=""
+                      />
+                    </button>
+                  </div>
 
-                <div className="innerTodos">
-                  <input
-                    className="inerField"
-                    type="text"
-                    placeholder="Добавить новую запись"
-                    value={inputValueFirst}
-                    onChange={handleInputChangeFirst}
-                  />
-                  <button className="innerBtn" onClick={handleAddItemFirst}>
-                    <img src="../../../icons/add.svg" alt="" />
-                  </button>
-                </div>
-                <section className='textDelete'>
-                  <ul>
-                    {itemsModalFirst.map((item, index) => (
-                      <div className="textList" key={index}>
-                        <li className='innerTextAlem'>
-                          {item}
-                          <button
-                            className="deleteBtn"
-                            onClick={() => handleRemoveItemFirst(index)}
-                          >
-                            <img src="../../../icons/delete.svg" alt="" />
+                  <div className="innerTodos">
+                    <input
+                      className="inerField"
+                      type="text"
+                      placeholder="Добавить новую запись"
+                      value={inputValueFirst}
+                      onChange={handleInputChangeFirst}
+                    />
+                    <button className="innerBtn" onClick={handleAddItemFirst}>
+                      <img src="../../../icons/add.svg" alt="" />
+                    </button>
+                  </div>
+                  <section className='textDelete'>
+                    <ul>
+                      {itemsModalFirst.map((item, index) => (
+                        <div className="textList" key={index}>
+                          <li className='innerTextAlem'>
+                            {item}
+                            <button
+                              className="deleteBtn"
+                              onClick={() => handleRemoveItemFirst(index)}
+                            >
+                              <img src="../../../icons/delete.svg" alt="" />
+                            </button>
+                          </li>
+                          <button className='rightArrow'>
+                            <img src="../../../icons/right.svg" alt="" />
                           </button>
-                        </li>
-                        <button className='rightArrow'>
-                          <img src="../../../icons/right.svg" alt="" />
-                        </button>
-                      </div>
-                    ))}
-                  </ul>
-                </section>
+                        </div>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
               </div>
             </div>
           )}
@@ -231,7 +240,7 @@ const Content = () => {
           {selectedButton === 'Катетер' && (
             <div className="catheterInnerModal">
               <h3> "Катетеры"</h3>
-              {/* ... (добавьте нужный контент для "Катетеров") */}
+              {/* ... (rest of the code for the Catheter modal) */}
             </div>
           )}
 
@@ -244,13 +253,92 @@ const Content = () => {
 
           {isCatheterTypeModalOpen && (
             <div className="catheterTypeInnerModal">
-              {/* Use the CatheterTypeContent state here */}
               <h3>Справочник "Типы катетеров"</h3>
               {catheterTypeContent}
             </div>
           )}
         </Modal>
       </div>
+
+      <div className="cantainerCarbonen" onClick={() => setIsModalOpenBar(true)}>
+        <div className="boxCarbone">
+          <h3 className='carboneText'>Бикарбонат</h3>
+          <div className="blockCarbone">
+            <input type="text" className='blockCarbonInput' placeholder='ХХХ гр / л' />
+            <button className='carboneBtn'>
+              <img
+                src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+
+        {isModalOpenBar && (
+          <Modal isOpen={isModalOpenBar} onClose={() => setIsModalOpenBar(false)}>
+            <div className="blockTiteCarbont">
+              <h3 className='listCarbonModalTitle'>Справочник "Бикарбонат"</h3>
+            </div>
+            <div className="listCarbonModal">
+              <p className='listCarboneText'> граммов</p>
+              <p className='listCarboneText'> литров</p>
+            </div>
+          </Modal>
+        )}
+
+
+        <div className="boxCarbone">
+          <h3 className='carboneText'>Сухой Вес пациента</h3>
+          <div className="blockCarbone">
+            <input type="text" className='blockCarbonInputSmall' placeholder='ХХХ кг' />
+          </div>
+        </div>
+
+        <div className="boxCarbone">
+          <h3 className='carboneText'>Антикоагуляция</h3>
+          <div className="blockCarbone">
+            <input type="text" className='blockCarbonInput' placeholder='Наименование' />
+            <button className='carboneBtn'>
+              <img
+                src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+        <div className="boxCarbone">
+          <h3 className='carboneText'>Объем</h3>
+          <div className="blockCarbone">
+            <input type="text" className='blockCarbonInputSmall' placeholder='ХХХ ед' />
+          </div>
+        </div>
+      </div>
+
+
+      <div className="totalBlock">
+
+        <h3>Назначения сеанса гемодиализа</h3>
+
+        <div className="listTotalBlock">
+          <ul className='listFirstTotal'>
+            <li>Программа</li>
+            <li>Концентратор Объём</li>
+            <li>Антикоагуляция ед.</li>
+          </ul>
+          <ul className='listSecondTotal'>
+            <li>Диализатор</li>
+            <li> Игла/ Катетер</li>
+            <li>Сухой вес кг</li>
+          </ul>
+          <ul className='listThirdtTotal'>
+            <li>Бикарбонат мл</li>
+          </ul>
+        </div>
+
+
+      </div>
+      <Banner />
+      <TextBlock />
     </div>
   );
 };

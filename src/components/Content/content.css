@@ -161,3 +161,130 @@
   line-height: 150%;
   letter-spacing: 0.96px;
 }
+
+.cardContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  text-align: center;
+  padding: 10px;
+  width: 400px;
+}
+
+.cardTitle {
+  margin-bottom: 20px;
+}
+
+.cardContent {
+  display: flex;
+
+  gap: 5px;
+}
+
+.cardBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cantainerCarbonen {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.boxCarbone {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.blockCarbone {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.carboneText {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 10px;
+}
+
+.blockCarbonInputSmall {
+  height: 40px;
+  width: 110px;
+}
+
+.carboneTextSmall {
+  text-align: center;
+}
+
+.blockCarbonInput {
+  height: 40px;
+  width: 240px;
+}
+
+.carboneBtn {
+  margin-left: 20px;
+}
+
+.listCarbonModal {
+  margin-top: 10px;
+}
+
+.listCarboneText {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  opacity: 0.6;
+}
+
+.blockTiteCarbont {
+  background-color: dimgray;
+  color: white;
+  height: 40px;
+  text-align: left;
+
+}
+
+.listCarbonModalTitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.totalBlock {
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.listTotalBlock {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.listSecondTotal,
+.listThirdtTotal {
+  margin-left: 35px;
+}
+
+.totalBlock li {
+  padding-top: 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  /* 25.6px */
+  letter-spacing: 0.96px;
+}
