@@ -11,8 +11,6 @@ import { RootState } from '../redux/store';
 import {
   setSelectedProgram,
   setSelectedButton,
- 
-
 } from '../Slices/contentSlice';
 
 const Content = () => {

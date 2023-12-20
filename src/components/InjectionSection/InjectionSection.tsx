@@ -1,17 +1,14 @@
 
-import React, { useState } from 'react';
-import Modal from '../ModalProps/ModalProps';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import {
-  setSelectedButton,
   setIsNeedleTypeModalOpen,
   setIsCatheterTypeModalOpen,
   setNeedleTypeContent,
   setCatheterTypeContent,
   setModalContent,
   setIsModalOpen,
-  setItemsModalFirst,
 } from '../Slices/contentSlice';
 
 interface InjectionSectionProps {
@@ -22,32 +19,8 @@ interface InjectionSectionProps {
 const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onButtonClick }) => {
   const dispatch = useDispatch();
   const contentState = useSelector((state: RootState) => state.content);
-  const [inputValueFirst, setInputValueFirst] = useState('');
 
-  const closeModal = () => {
-    dispatch(setIsModalOpen(false));
-    dispatch(setIsNeedleTypeModalOpen(false));
-    dispatch(setIsCatheterTypeModalOpen(false));
-    dispatch(setModalContent(''));
-    dispatch(setNeedleTypeContent(''));
-    dispatch(setCatheterTypeContent(''));
-    dispatch(setSelectedButton(null));
-  };
 
-  const handleRemoveItemFirst = (index: number) => {
-    dispatch(setItemsModalFirst(contentState.itemsModalFirst.filter((_, i) => i !== index)));
-  };
-
-  const handleInputChangeFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValueFirst(e.target.value);
-  };
-
-  const handleAddItemFirst = () => {
-    if (inputValueFirst.trim() !== '') {
-      dispatch(setItemsModalFirst([...contentState.itemsModalFirst, inputValueFirst]));
-      setInputValueFirst('');
-    }
-  };
 
   const openModal = (content: string) => {
     dispatch(setModalContent(content));
@@ -137,7 +110,7 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
 
       {renderContent()}
 
-     
+
     </div>
   );
 };
