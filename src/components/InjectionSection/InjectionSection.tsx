@@ -137,64 +137,7 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
 
       {renderContent()}
 
-      <Modal isOpen={contentState.isModalOpen} onClose={closeModal}>
-        {selectedButton === 'Игла' && (
-          <div className="needleInnerModal">
-            <h3>Лекарственные препараты</h3>
-            <button onClick={closeModal}>Закрыть</button>
-            <div className="innerFoms">
-              <div className="starchForm">
-                <input
-                  className="inerField"
-                  type="text"
-                  placeholder="Поиск позиции по первым символам"
-                />
-                <button className="innerBtn">
-                  <img
-                    src="../../../icons/search-svgrepo-com.svg"
-                    alt=""
-                  />
-                </button>
-              </div>
-
-              <div className="innerTodos">
-                <input
-                  className="inerField"
-                  type="text"
-                  placeholder="Добавить новую запись"
-                  value={inputValueFirst}
-                  onChange={handleInputChangeFirst}
-                />
-                <button className="innerBtn" onClick={handleAddItemFirst}>
-                  <img src="../../../icons/add.svg" alt="" />
-                </button>
-              </div>
-              <section className='textDelete'>
-                <ul>
-                  {contentState.itemsModalFirst.map((item, index) => (
-                    <div className="textList" key={index}>
-                      <li className='innerTextAlem'>
-                        {item}
-                        <button
-                          className="deleteBtn"
-                          onClick={() => handleRemoveItemFirst(index)}
-                        >
-                          <img src="../../../icons/delete.svg" alt="" />
-                        </button>
-                      </li>
-                      <button className='rightArrow'>
-                        <img src="../../../icons/right.svg" alt="" />
-                      </button>
-                    </div>
-                  ))}
-                </ul>
-              </section>
-            </div>
-          </div>
-        )}
-
-        
-      </Modal>
+     
     </div>
   );
 };

@@ -66,9 +66,6 @@ const InjectionContent: React.FC = () => {
   return (
     <>
       {renderContent()}
-      <Modal isOpen={contentState.isModalOpen} onClose={() => dispatch(setIsModalOpen(false))}>
-        {/* ... (content for the modal) */}
-      </Modal>
     </>
   );
 };
