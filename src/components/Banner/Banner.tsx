@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './banner.css'
+import React, { useState } from 'react';
+import './banner.css';
 
 interface TableRow {
     id: number;
@@ -73,12 +73,12 @@ const Banner = () => {
         const newId = tableData.length + 1;
         const newRow: TableRow = {
             id: newId,
-            medication: '', // You can set default values or leave them empty
+            medication: '',
             path: '',
             start: '',
             end: '',
-            session: selectedButton || 1, // Assign the selected button value or a default value
-            days: 0, // You can set default values or leave them empty
+            session: selectedButton || 1,
+            days: 0,
         };
         setTableData((prevData) => [...prevData, newRow]);
     };
@@ -125,7 +125,6 @@ const Banner = () => {
                                         </div>
                                     </div>
 
-
                                     <section className='textDelete'>
                                         <ul>
                                             {itemsModalFirst.map((item, index) => (
@@ -154,20 +153,15 @@ const Banner = () => {
                 )}
             </div>
             <section className='doze'>
-
                 <div>
                     <h3 className='inputCardText'>Путь приёма</h3>
                     <div className="bannerFirst">
-
                         <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
                         <button className='bannerBtn' onClick={openModalSecond}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
-
                     </div>
-
                 </div>
-
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -177,7 +171,6 @@ const Banner = () => {
                             {itemsModalSecondBanner.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
-
                                 </div>
                             ))}
                         </div>
@@ -192,7 +185,6 @@ const Banner = () => {
                         </button>
                     </div>
                 </div>
-
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -202,13 +194,11 @@ const Banner = () => {
                             {itemsModalSecond.map((item, index) => (
                                 <div key={index} className="deleteBlock">
                                     <p className='todosText'>{item}</p>
-
                                 </div>
                             ))}
                         </div>
                     </div>
                 )}
-
             </section>
             <div className="seans">
                 <h4>Номера сеансов:</h4>
@@ -316,7 +306,7 @@ const Banner = () => {
                 </table>
             </div>
         </div>
-    )
+    );
 }
 
-export default Banner
+export default Banner;

@@ -1,0 +1,19 @@
+.threeBtnItemInput{
+  height: 40px;
+  width: 270px;
+}
+.threeBtnItem{
+    display: flex;
+    align-items: center;
+
+}
+.threeBtnItemLabel{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 10px
+}
+.threeBtnItemBtn{
+    margin-left: 10px;
+}

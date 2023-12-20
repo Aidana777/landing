@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from '../ModalProps/ModalProps';
 
 interface TableRow {
@@ -14,13 +14,40 @@ interface TableRow {
 const HomeBlock = () => {
     const [showModalFirst, setShowModalFirst] = useState(false);
     const [showModalSecond, setShowModalSecond] = useState(false);
-    const [itemsModalDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
-    const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
-    const [selectedButton] = useState<number | null>(null);
-    const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '1 рад в день ']);
-
     const [showDosageModal, setShowDosageModal] = useState(false);
     const [showModalBanner, setShowModalBanner] = useState(false);
+
+    const [itemsModalDoza] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
+    const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
+    const [itemsModalDays] = useState<string[]>(['1 рад в день', '2 рад в день ', '1 рад в день ']);
+
+    const [selectedButton] = useState<number | null>(null);
+    const [tableData, setTableData] = useState<TableRow[]>([
+        { id: 1, medication: 'Medication 1', path: 'Path 1', start: 'Start 1', end: 'End 1', session: 1, days: 7 },
+        { id: 2, medication: 'Medication 2', path: 'Path 2', start: 'Start 2', end: 'End 2', session: 2, days: 14 },
+    ]);
+
+    const [inputValueFirst, setInputValueFirst] = useState('');
+    const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
+        'Лекарственный препарат №1',
+        'Лекарственный препарат №2',
+        'Лекарственный препарат №3',
+        'Лекарственный препарат №4',
+    ]);
+
+    const handleCreateRow = () => {
+        const newId = tableData.length + 1;
+        const newRow: TableRow = {
+            id: newId,
+            medication: 'New Medication',
+            path: 'New Path',
+            start: 'New Start',
+            end: 'New End',
+            session: selectedButton || 1,
+            days: 0,
+        };
+        setTableData((prevData) => [...prevData, newRow]);
+    };
 
     const openModalBanner = () => {
         setShowModalBanner(true);
@@ -37,9 +64,11 @@ const HomeBlock = () => {
     const closeDosageModal = () => {
         setShowDosageModal(false);
     };
+
     const openModalSecond = () => {
         setShowModalSecond(true);
     };
+
     const closeModalSecond = () => {
         setShowModalSecond(false);
     };
@@ -51,6 +80,7 @@ const HomeBlock = () => {
     const closeModalFirst = () => {
         setShowModalFirst(false);
     };
+
     const handleInputChangeFirst = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValueFirst(e.target.value);
     };
@@ -64,34 +94,6 @@ const HomeBlock = () => {
 
     const handleRemoveItemFirst = (index: number) => {
         setItemsModalFirst((prevItems) => prevItems.filter((_, i) => i !== index));
-    };
-
-    const [tableData, setTableData] = useState<TableRow[]>([
-        { id: 1, medication: 'Medication 1', path: 'Path 1', start: 'Start 1', end: 'End 1', session: 1, days: 7 },
-        { id: 2, medication: 'Medication 2', path: 'Path 2', start: 'Start 2', end: 'End 2', session: 2, days: 14 },
-    ]);
-
-
-    const [inputValueFirst, setInputValueFirst] = useState('');
-    const [itemsModalFirst, setItemsModalFirst] = useState<string[]>([
-        'Лекарственный препарат №1',
-        'Лекарственный препарат №2',
-        'Лекарственный препарат №3',
-        'Лекарственный препарат №4',
-    ]);
-
-    const handleCreateRow = () => {
-        const newId = tableData.length + 1;
-        const newRow: TableRow = {
-            id: newId,
-            medication: 'New Medication', // Default value for medication
-            path: 'New Path', // Default value for path
-            start: 'New Start', // Default value for start
-            end: 'New End', // Default value for end
-            session: selectedButton || 1,
-            days: 0,
-        };
-        setTableData((prevData) => [...prevData, newRow]);
     };
 
     return (
@@ -237,7 +239,6 @@ const HomeBlock = () => {
                         <Modal isOpen={showModalBanner} onClose={closeModalBanner}>
 
                             <div className="modalContent">
-                                {/* trhhnthbtgbhthtg */}
                                 <div className="blockTiteCarbont">
                                     <h3 className='listCarbonModalTitle'>Справочник "Кратность приема"</h3>
                                 </div>
@@ -287,9 +288,8 @@ const HomeBlock = () => {
                 </div>
 
             </div>
-
         </div>
-    )
+    );
 }
 
-export default HomeBlock
+export default HomeBlock;

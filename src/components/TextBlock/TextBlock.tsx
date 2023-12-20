@@ -1,8 +1,11 @@
-import './text.css'
+
+
+import './text.css';
 import { useState, useEffect } from 'react';
 
 const TextBlock: React.FC = () => {
   const [currentDateTime, setCurrentDateTime] = useState<string>('');
+
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date();
@@ -38,17 +41,15 @@ const TextBlock: React.FC = () => {
         </div>
         <textarea placeholder='Рекомендации лечащего врача пациенту' rows={10} cols={107} name="text"></textarea>
       </div>
-   <div className="mainDataBlock">
-
-   <div className="dateAndTimeBlock">
+      <div className="mainDataBlock">
+        <div className="dateAndTimeBlock">
           <img src="../../../icons/calendar-month-schedule-time-date-svgrepo-com.svg" alt="" />
           <p>{currentDateTime}</p>
         </div>
-   
-          <img src="../../../icons/doctor.svg" alt="" />
-          <p>ФИО лечащего врача  Должность</p>
-   </div>
-      <button  className='totalBtn'>Сохранить назначения</button>
+        <img src="../../../icons/doctor.svg" alt="" />
+        <p>ФИО лечащего врача  Должность</p>
+      </div>
+      <button className='totalBtn'>Сохранить назначения</button>
     </div>
   );
 }

@@ -1,25 +1,21 @@
 // ThreeBtnItem.tsx
-
-import React, { FC, ReactNode } from 'react';
-
+import './ThreeBtnItem.css'
 interface ThreeBtnItemProps {
   label: string;
-  placeholder?: string;
+  placeholder: string;
 }
 
-const ThreeBtnItem: FC<ThreeBtnItemProps> = ({ label, placeholder }) => {
+const ThreeBtnItem: React.FC<ThreeBtnItemProps> = ({ label, placeholder }) => {
   return (
-    <div className="boxThreeBtn">
-      <div className='inputBtnBox'>
-        <p className='textBtnBlock'>{label}</p>
-        <div className="inputBoxContainer">
-          <input type="text" className='inputBoxBox' placeholder={placeholder} />
-          <button className='btnThreeBlock'>
-            <img className='mainBtnImg' src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-          </button>
-        </div>
-      </div>
+  <div className="boxItems">
+     <label className="threeBtnItemLabel">{label}</label>
+      <div className="threeBtnItem">
+      <input className="threeBtnItemInput" type="text" placeholder={placeholder} />
+      <button className="threeBtnItemBtn">
+        <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+      </button>
     </div>
+  </div>
   );
 };
 
