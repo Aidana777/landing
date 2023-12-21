@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../ModalProps/ModalProps';
-
+import './home.css'
 interface TableRow {
     id: number;
     medication: string;
@@ -100,7 +100,7 @@ const HomeBlock = () => {
         <div>
             <div className="container">
                 <h3 className='bannerTitle'>Лечение на дому</h3>
-                <h3 >Лекарственный препарат</h3>
+                <h3 className='homeTitle'>Лекарственный препарат</h3>
             </div>
             <div className="modalSession">
                 <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
@@ -112,7 +112,7 @@ const HomeBlock = () => {
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
                             <div className="modal-content">
                                 <div className=" inner  innerModalFirst">
-                                    <h3>Лекарственные препараты</h3>
+                                    <h3 >Лекарственные препараты</h3>
                                     <button className='closeModal' onClick={closeModalFirst}>Закрыть</button>
                                     <div className="innerFoms">
                                         <div className="starchForm">
@@ -168,7 +168,7 @@ const HomeBlock = () => {
             </div>
             <section className='doze'>
                 <div className="textBox">
-                    <h3>Путь приёма</h3>
+                    <h3 className='homeTitle'>Путь приёма</h3>
                     <div className="bannerFirst">
                         <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
                         <button className='bannerBtn' onClick={openDosageModal}>
@@ -195,9 +195,8 @@ const HomeBlock = () => {
 
 
                 <div className="textBox">
-                    <h3>Дозировка </h3>
+                    <h3 className='homeTitle'>Дозировка </h3>
                     <div className="bannerFirst">
-
                         <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов' />
                         <button className='bannerBtn' onClick={openModalSecond}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
@@ -226,7 +225,7 @@ const HomeBlock = () => {
 
             <section className='dateBlock'>
                 <div className="textBox">
-                    <h3>Кратность приёма </h3>
+                    <h3 className='homeTitle'>Кратность приёма </h3>
                     <div className="bannerFirst">
 
                         <input className='dataInput' type="text" placeholder='Спр. "Кр-ть приема"' />
@@ -255,11 +254,11 @@ const HomeBlock = () => {
 
 
                 <div className="endnDate">
-                    <h3>Начало приёма</h3>
+                    <h3 className='homeTitle'>Начало приёма</h3>
                     <input className='dataInput' type="date" name="begin" />
                 </div>
                 <div className="endnDate">
-                    <h3>Конец приёма</h3>
+                    <h3 className='homeTitle'>Конец приёма</h3>
                     <input className='dataInput' type="date" name="begin" />
                 </div>
             </section>
@@ -268,26 +267,30 @@ const HomeBlock = () => {
             </div>
             <div>
                 <button onClick={handleCreateRow} className='totalBtn'>Добавить</button>
-
                 <h3>Лечение на дому</h3>
+                <div className="totalBlock">
+       
+        <div className="listTotalBlock">
+          <ul className='listFirstTotal'>
+            <li>Лекарственный препарат</li>
+            <li>2 раза в день утром и вечером</li>
+           
+          </ul>
+          <ul className='listSecondTotal'>
+            <li>Перорально 5 мг</li>
+            <li> с 01.01.222 по 10.01.2022</li>
+          </ul>
+          <ul className='listThirdtTotal'>
+            <li>10 дней </li>
+          </ul>
+        </div> 
+        </div>
 
-                <div className="listTotalBlock">
-                    <ul className='listFirstTotal'>
-                        <li>Лекарственный препарат</li>
-                        <li>2 раза в день утром и вечером</li>
-
-                    </ul>
-                    <ul className='listSecondTotal'>
-                        <li>Перорально 5 мг</li>
-                        <li> с 01.01.222 по 10.01.2022</li>
-
-                    </ul>
-                    <ul className='listThirdtTotal'>
-                        <li>10 дней </li>
-                    </ul>
-                </div>
+                
 
             </div>
+
+            
         </div>
     );
 }

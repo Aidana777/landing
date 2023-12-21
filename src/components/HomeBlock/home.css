@@ -1,0 +1,32 @@
+.closeModal{
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: transparent;
+}
+.homeTitle{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+}
+.listTotalBlock {
+    display: flex;
+    align-items: center;
+  }
+  
+  .listSecondTotal,
+  .listThirdtTotal {
+    margin-left: 35px;
+  }
+  
+  .totalBlock li {
+    padding-top: 5px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.96px;
+  }
+  

@@ -17,6 +17,16 @@ const Banner = () => {
     const [itemsModalSecond] = useState<string[]>(['мкг', 'мл ', 'мг/ кг ']);
     const [itemsModalSecondBanner] = useState<string[]>(['Перорально', 'Подкожно ', 'Артериально ']);
     const [selectedButton, setSelectedButton] = useState<number | null>(null);
+    const [showModalThird, setShowModalThird] = useState(false);
+
+  
+    const openModalThird = () => {
+        setShowModalThird(true);
+    };
+    const closeModalThird = () => {
+        setShowModalThird(false);
+    };
+
 
     const handleButtonClick = (buttonNumber: number) => {
         setSelectedButton(buttonNumber);
@@ -156,21 +166,21 @@ const Banner = () => {
                 <div>
                     <h3 className='inputCardText'>Путь приёма</h3>
                     <div className="bannerFirst">
-                        <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' />
-                        <button className='bannerBtn' onClick={openModalSecond}>
+                         <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' /> 
+                        <button className='bannerBtn' onClick={openModalThird}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
                     </div>
                 </div>
-                {showModalSecond && (
-                    <div className="centerModal" onClick={closeModalSecond}>
+                {showModalThird && (
+                    <div className="centerModal" onClick={closeModalThird}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
-                            <div>
-                                <h3> Справочник "Путь приема"</h3>
+                            <div className='blockTiteCarbont'>
+                                <h3 className='listCarbonModalTitle'> Справочник "Путь приема"</h3>
                             </div>
                             {itemsModalSecondBanner.map((item, index) => (
-                                <div key={index} className="deleteBlock">
-                                    <p className='todosText'>{item}</p>
+                                <div key={index} className='listCarbonModal'>
+                                    <p className='listCarboneText'>{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -188,12 +198,12 @@ const Banner = () => {
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
-                            <div>
-                                <h3>Справочник "Дозы препаратов"</h3>
+                            <div className="blockTiteCarbont">
+                                <h3 className='listCarbonModalTitle'>Справочник "Дозы препаратов"</h3>
                             </div>
                             {itemsModalSecond.map((item, index) => (
-                                <div key={index} className="deleteBlock">
-                                    <p className='todosText'>{item}</p>
+                                <div key={index}  className='listCarbonModal'>
+                                    <p className='listCarboneText'>{item}</p>
                                 </div>
                             ))}
                         </div>
