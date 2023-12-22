@@ -1,5 +1,3 @@
-
-
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import {
@@ -10,6 +8,7 @@ import {
   setModalContent,
   setIsModalOpen,
 } from '../Slices/contentSlice';
+import './injectionSection.css'
 
 interface InjectionSectionProps {
   selectedButton: string | null;
@@ -46,15 +45,16 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
         selectedButton === 'Игла' ? contentState.needleTypeContent : contentState.catheterTypeContent;
 
       return (
-        <div className="injectionContent">
-          <div className="injectionContentBox">
+        <div className="injection__box_wrapp">
+          <div className="injection__box_container">
             <input
-              className="injectionContentInput"
+              className="injection__box_input"
               type="text"
               placeholder={placeholder1}
             />
+        
             <button
-              className="injectionContentBtn"
+              className="global_burger_menu_button"
               onClick={() => openModal(modalContent)}
             >
               <img
@@ -63,14 +63,14 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
               />
             </button>
           </div>
-          <div className="injectionContentBox">
+          <div className="injection__box_container">
             <input
-              className="injectionContentInput"
+              className="injection__box_input"
               type="text"
               placeholder={placeholder2}
             />
             <button
-              className="injectionContentBtn"
+              className="global_burger_menu_button"
               onClick={() => openModal(modalContent)}
             >
               <img
@@ -86,10 +86,11 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
   };
 
   return (
-    <div className="injection">
-      <div className="injectionBtns">
+    <div className="injection__contaier">
+    <h3>Тип иньеций</h3>
+      <div className="injectionBtns_container">
         <button
-          className={`injectionBtn ${selectedButton === 'Игла' ? 'selected' : ''}`}
+          className={`global_button ${selectedButton === 'Игла' ? 'global_button_active' : ''}`}
           onClick={() => {
             onButtonClick('Игла');
             openNeedleTypeModal();
@@ -98,7 +99,7 @@ const InjectionSection: React.FC<InjectionSectionProps> = ({ selectedButton, onB
           Игла
         </button>
         <button
-          className={`injectionBtn ${selectedButton === 'Катетер' ? 'selected' : ''}`}
+          className={`global_button ${selectedButton === 'Катетер' ? 'global_button_active' : ''}`}
           onClick={() => {
             onButtonClick('Катетер');
             openCatheterTypeModal();

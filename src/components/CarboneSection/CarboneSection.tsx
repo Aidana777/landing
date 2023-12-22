@@ -1,6 +1,5 @@
-
 import Modal from '../ModalProps/ModalProps';
-
+import './carboneSection.css'
 interface CarboneSectionProps {
   openModalBanner: () => void;
   closeModalBanner: () => void;
@@ -13,7 +12,7 @@ const CarboneSection: React.FC<CarboneSectionProps> = ({
   showModalBanner,
 }) => {
   return (
-    <div className="cantainerCarbonen">
+    <div className="carbonen__container">
       <CarboneBox openModalBanner={openModalBanner} />
       {showModalBanner && <CarboneModal onClose={closeModalBanner} />}
       <CarboneBoxInputSmall label="Сухой Вес пациента" placeholder="ХХХ кг" />
@@ -29,11 +28,11 @@ interface CarboneBoxProps {
 
 const CarboneBox: React.FC<CarboneBoxProps> = ({ openModalBanner }) => {
   return (
-    <div className="boxCarbone">
-      <h3 className='carboneText'>Бикарбонат</h3>
-      <div className="blockCarbone">
-        <input type="text" className='blockCarbonInput' placeholder='ХХХ гр / л' />
-        <button className='carboneBtn' onClick={openModalBanner}>
+    <div className="carbone__box">
+      <h3 >Бикарбонат</h3>
+      <div className="carbone__block">
+        <input type="text" className='carbone__input' placeholder='ХХХ гр / л' />
+        <button className='global_burger_menu_button' onClick={openModalBanner}>
           <img
             src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
             alt=""
@@ -71,11 +70,9 @@ interface CarboneBoxInputSmallProps {
 
 const CarboneBoxInputSmall: React.FC<CarboneBoxInputSmallProps> = ({ label, placeholder }) => {
   return (
-    <div className="boxCarbone">
-      <h3 className='carboneText'>{label}</h3>
-      <div className="blockCarbone">
-        <input type="number" className='blockCarbonInputSmall' placeholder={placeholder} />
-      </div>
+    <div className="carbone__box">
+      <h3 className='carbone_small__h3' >{label}</h3>
+        <input type="number" className='carbone_small__input' placeholder={placeholder} />
     </div>
   );
 };
@@ -87,18 +84,17 @@ interface CarboneBoxWithButtonProps {
 
 const CarboneBoxWithButton: React.FC<CarboneBoxWithButtonProps> = ({ label, placeholder }) => {
   return (
-    <div className="boxCarbone">
-      <h3 className='carboneText'>{label}</h3>
-      <div className="blockCarbone">
-        <input type="text" className='blockCarbonInput' placeholder={placeholder} />
-        <button className='carboneBtn'>
+    <div className="carbone__box">
+      <h3 >{label}</h3>
+      <div className="carbone__block">
+        <input type="text" className='carbone__input' placeholder={placeholder} />
+        <button className='global_burger_menu_button'>
           <img
             src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg"
             alt=""
           />
         </button>
       </div>
-    
     </div>
   );
 };

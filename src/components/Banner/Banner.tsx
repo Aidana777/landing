@@ -95,15 +95,17 @@ const Banner = () => {
 
     return (
         <div>
-            <div className="container">
-                <h3 className='bannerTitle'>Назначения после сеанса</h3>
-                <p className='coinText'>Лекарственный препарат</p>
-            </div>
+            <h2 className='banner__block_title' >Назначения после сеанса</h2>
             <div className="modalSession">
-                <input className='bannerInput' type="text" placeholder='Спр. "Препараты"' />
-                <button className='bannerBtn' onClick={openModalFirst}>
-                    <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
-                </button>
+                <div className='banner_serch__contianer'>
+                    <h3 >Лекарственный препарат</h3>
+                    <div className='banner_serch__input_container'>
+                        <input className='banner_serch__input' type="text" placeholder='Спр. "Препараты"' />
+                        <button className='global_burger_menu_button' onClick={openModalFirst}>
+                            <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
                 {showModalFirst && (
                     <div className="centerModal" onClick={closeModalFirst}>
                         <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -155,22 +157,23 @@ const Banner = () => {
                                             ))}
                                         </ul>
                                     </section>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 )}
             </div>
-            <section className='doze'>
+            <section className='banner_doze__container'>
                 <div>
-                    <h3 className='inputCardText'>Путь приёма</h3>
-                    <div className="bannerFirst">
-                         <input className='bannerInput' type="text" placeholder='Спр. "Путь приема"' /> 
-                        <button className='bannerBtn' onClick={openModalThird}>
+                <div className='banner_serch__contianer'>
+                    <h3 >Путь приёма</h3>
+                    <div className='banner_serch__input_container'>
+                        <input className='banner_serch_reception_route__input' type="text" placeholder='Спр. "Путь приема"' />
+                        <button className='global_burger_menu_button' onClick={openModalFirst}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
                     </div>
+                </div>
                 </div>
                 {showModalThird && (
                     <div className="centerModal" onClick={closeModalThird}>
@@ -187,13 +190,15 @@ const Banner = () => {
                     </div>
                 )}
                 <div>
-                    <h3 className='inputCardText'>Дозировка</h3>
-                    <div className="bannerSecond">
-                        <input className='bannerInput' type="text" placeholder='Спр. "Дозы препаратов"' />
-                        <button className='bannerBtn' onClick={openModalSecond}>
+                    <div className='banner_serch__contianer'>
+                    <h3 >Дозировка</h3>
+                    <div className='banner_serch__input_container'>
+                        <input className='banner_serch_reception_route__input' type="text" placeholder='Спр. "Путь приема"' />
+                        <button className='global_burger_menu_button' onClick={openModalFirst}>
                             <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
                         </button>
                     </div>
+                </div>
                 </div>
                 {showModalSecond && (
                     <div className="centerModal" onClick={closeModalSecond}>

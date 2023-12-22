@@ -1,15 +1,38 @@
+.banner__block_title{
+   margin:0px 0px 15px 0px;
+}
+.banner_serch__contianer{
+  display:flex;
+  flex-direction:column;
+  row-gap:10px;
+}
+.banner_serch__input_container{
+  display:flex;
+  column-gap:15px;
+  align-items:center;
+}
+.banner_serch_reception_route__input{
+  height: var(--input);
+}
+.banner_serch__input{
+  width: 350px;
+  height: var(--input);
+}
 .modalSession {
   display: flex;
   align-items: center;
 }
-
-.bannerInput {
-  height: 40px;
+.banner_doze__container{
+  display:flex;
+  column-gap:15px;
+}
+/* .bannerInput { */
+  /* height: 40px;
   width: 250px;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 .bannerBtn {
   margin-left: 12px;
@@ -128,13 +151,13 @@ tr:hover {
   font-weight: 500;
   line-height: 58px;
 }
-.coinText{
+/* .coinText{
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
   margin-top: 10px;
-}
+} */
 .inputCardText{
   font-size: 16px;
 font-style: normal;

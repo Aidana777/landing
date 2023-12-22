@@ -1,19 +1,14 @@
-.threeBtnItemInput{
-  height: 40px;
-  width: 270px;
+.threeBtn__container{
+  display:flex;
+  flex-direction:column;
+  row-gap:5px;
 }
-.threeBtnItem{
-    display: flex;
+.threeBtn__container_input{
+    display:flex;
+    column-gap:10px;
     align-items: center;
-
 }
-.threeBtnItemLabel{
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    margin-bottom: 10px
-}
-.threeBtnItemBtn{
-    margin-left: 10px;
+.threeBtn__input{
+    width: 270px;
+    height: var(--input);
 }

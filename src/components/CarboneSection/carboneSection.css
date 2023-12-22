@@ -1,0 +1,29 @@
+.carbonen__container{
+    display:flex;
+    column-gap:15px;
+    align-items:end;
+    margin:15px 0px;
+}
+.carbone__box{
+   display:flex;
+   flex-direction:column;
+   row-gap:10px;
+}
+.carbone__block{
+    display:flex;
+    column-gap:15px;
+    align-items:center;
+}
+.carbone__input{
+   width:160px ;
+   height: var(--input); 
+}
+.carbone_small__h3{
+    width:100px;
+    max-width:200px;
+}
+.carbone_small__input{
+    width:100px;
+    height:var(--input)
+}
+/* className="cantainerCarbonen */
