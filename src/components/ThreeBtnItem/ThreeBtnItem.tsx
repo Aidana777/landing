@@ -7,11 +7,11 @@ interface ThreeBtnItemProps {
 
 const ThreeBtnItem: React.FC<ThreeBtnItemProps> = ({ label, placeholder }) => {
   return (
-  <div className="boxItems">
-     <label className="threeBtnItemLabel">{label}</label>
-      <div className="threeBtnItem">
-      <input className="threeBtnItemInput" type="text" placeholder={placeholder} />
-      <button className="threeBtnItemBtn">
+  <div className="threeBtn__container">
+     <h3 >{label}</h3>
+      <div className="threeBtn__container_input">
+      <input className="threeBtn__input" type="text" placeholder={placeholder} />
+      <button className='global_burger_menu_button'>
         <img src="../../../icons/burger-checklist-list-menu-navigation-svgrepo-com.svg" alt="" />
       </button>
     </div>

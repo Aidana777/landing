@@ -3,22 +3,47 @@
   src: url(./fonts/Roboto-Black.ttf) format('ttf');
 }
 
-body {
-  background-color: snow;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+:root{
+  --text:16px;
+  --input:35px;
+  --input-left:15px;
+  --burger-width:40px;
+  --burger-height:35px;
+}
+body {
+  background-color: snow;
+  font-family: 'Roboto', sans-serif;
+  font-size:var(--text);
+  color: #000000ac;
+}
+/*  Глобальные  переменый  используемый  на всей странице */
+h1{
+ color: #000000c8;
+ font-weight: 400;
+}
+h2{
+  color: #000000c8;
+  font-weight: 400;
+ }
+ h3{
+  color: #000000c8;
+  font-weight: 400;
+ }
+ input{
+  padding-left: var(--input-left);
+  font-size:va(--text);
+  border:2px solid rgba(192, 192, 192, 0.568);
+  border-radius:2px;
+ }
 .app {
   width: 900px;
   margin: 0 auto;
 }
-
-
 
 ul,
 li {
@@ -26,12 +51,29 @@ li {
   
 }
 
-span {
+/* span {
   color: deepskyblue;
+} */
+.global_burger_menu_button{
+    width:40px;
+    height: 35px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.global_button{
+  width:max-content;
+  height:max-content;
+  padding:10px 45px;
+  border-radius:3px ;
+  border:2px solid silver;
+}
+.global_button_active{
+  border-color:green;
 }
 img {
-  width: 40px;
-  height: 30px;
+  width: var(--burger-width);
+  height: var(--burger-height);
 }
 /* Add this CSS to your stylesheets or components */
 
@@ -72,34 +114,6 @@ img {
   width: 150px;
   height: 20px;
 }
-/* Typography */
-.coinTitle {
-  font-size: 65px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-}
-
-.subTitle {
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 44px;
-}
-
-.content_Text {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 34px;
-}
-
-/* Layout and Box Model */
-.buttonChose {
-  display: flex;
-  margin-top: 5px;
-}
-
 .contentItem {
   width: 120px;
   height: 40px;
@@ -120,25 +134,6 @@ img {
   display: inline-block;
   margin-right: 10px;
 }
-
-.innerBlockBtns {
-  display: flex;
-  align-items: center;
-}
-
-.boxThreeBtnSmall {
-  margin-left: 260px;
-  align-items: center;
-}
-
-.textBtnBlock {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-  margin-bottom: 10px;
-}
-
 .boxThreeBtn {
   display: flex;
   align-items: center;
@@ -164,42 +159,6 @@ img {
   margin-left: 20px;
 }
 
-.div {
-  border: 1px solid black;
-  height: 40px;
-  width: 50px;
-  padding: 8px;
-  background-color: white;
-}
-
-/* Injection Styles */
-.injectionBtns {
-  margin-top: 30px;
-}
-
-.injectionBtn {
-  margin-right: 70px;
-  width: 160px;
-  height: 50px;
-  border: 1px solid black;
-  color: #000;
-}
-
-.injectionBtn.selected {
-  border: 1px solid green;
-  color: green;
-}
-
-.injectionContentBox {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.injectionContentInput {
-  width: 330px;
-  height: 40px;
-}
 
 .innerTodos {
   display: flex;
@@ -283,49 +242,6 @@ img {
   border: none;
   cursor: pointer;
 }
-
-/* Carbon Container Styles */
-.cantainerCarbonen {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.boxCarbone {
-  display: inline-block;
-  margin-right: 30px;
-}
-
-.blockCarbone {
-  display: flex;
-  align-items: center;
-  width: 200px;
-  height: 30px;
-  margin-right: 20px;
-}
-
-.carboneText {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-  margin-bottom: 10px;
-}
-
-.blockCarbonInputSmall {
-  height: 40px;
-  width: 110px;
-}
-
-.carboneTextSmall {
-  text-align: center;
-}
-
-.blockCarbonInput {
-  height: 40px;
-  width: 240px;
-}
-
 .carboneBtn {
   margin-left: 20px;
 }
@@ -356,13 +272,6 @@ img {
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-}
-
-/* Total Block Styles */
-.totalBlock {
-  padding: 10px;
-  border: 1px solid black;
-  margin-top: 20px;
 }
 
 .listTotalBlock {

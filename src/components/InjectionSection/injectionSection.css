@@ -1,0 +1,29 @@
+.injection__contaier{
+  display:flex;
+  flex-direction:column;
+  row-gap:15px;
+}
+.injectionBtns_container{
+  display:flex;
+  column-gap:30px;
+  
+}
+.injection__box_wrapp{
+  display:flex;
+  column-gap:15px;
+}
+.injection__box_container{
+  display:flex;
+  column-gap:15px;
+  align-items:center;
+}
+.injection__box_input{
+  width: 160px;
+  height: var(--input);
+}
+
+/* .injection__box_btn{
+  width:
+} */
+/* injectionContent */
+/* njectionBtns */

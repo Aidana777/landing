@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProgramButtons from './ProgramButtons';
+import ProgramButtons from "../../programButtons/ProgramButtons";
 import ThreeBtnSection from '../ThreeBtnSection/ThreeBtnSection';
 import InjectionSection from '../InjectionSection/InjectionSection';
 import Banner from '../Banner/Banner';
@@ -12,6 +12,7 @@ import {
   setSelectedProgram,
   setSelectedButton,
 } from '../Slices/contentSlice';
+import './content.css'
 
 const Content = () => {
   const dispatch = useDispatch();
@@ -28,18 +29,17 @@ const Content = () => {
   };
 
   return (
-    <div className="container">
-      <h3 className="subTitle">Назначения сеанса гемодиализа</h3>
-      <p className="content_Text">Программа аппарата Назначения сеанса гемодиализа</p>
-
+    <div >
+      <div className='content_title'>
+        <h2 >Назначения сеанса гемодиализа</h2>
+        <h3>Программа аппарата </h3>
+      </div>
       <ProgramButtons
         programOptions={['HD', 'HDF', 'UF']}
         selectedProgram={contentState.selectedProgram}
         onSelectProgram={(program) => dispatch(setSelectedProgram(program))}
       />
-
       <ThreeBtnSection />
-
       <InjectionSection
         selectedButton={contentState.selectedButton}
         onButtonClick={(btn: string | null) => {
@@ -47,37 +47,52 @@ const Content = () => {
           // Additional logic if needed
         }}
       />
-
       <CarboneSection
         openModalBanner={openModalBanner}
         closeModalBanner={closeModalBanner}
         showModalBanner={showModalBanner}
       />
-
-
-
-      <div>
-        <button className='totalBtn'>Сформировать сеанс</button>
+      <div className='total_block___buttton_container'>
+        <button className='global_button'>Сформировать сеанс</button>
       </div>
-      <div className="totalBlock">
-        <h3>Назначения сеанса гемодиализа</h3>
-        <div className="listTotalBlock">
-          <ul className='listFirstTotal'>
-            <li>Программа</li>
-            <li>Концентратор Объём</li>
-            <li>Антикоагуляция ед.</li>
-          </ul>
-          <ul className='listSecondTotal'>
-            <li>Диализатор</li>
-            <li> Игла/ Катетер</li>
-            <li>Сухой вес кг</li>
-          </ul>
-          <ul className='listThirdtTotal'>
-            <li>Бикарбонат мл</li>
-          </ul>
-        </div> 
+      <div className="total__block_container">
+        <h4 className='total__block_h3'>Назначения сеанса гемодиализа</h4>
+        {/* <div className="listTotalBlock"> */}
+          <div className='total__block_list'>
+            <span className='total__block_title_container'>
+              <img className='total__block_icon' src="" alt="icon" />
+              <h4>- Программа</h4> <div></div>
+            </span>
+            <span className='total__block_title_container'>
+              <img className='total__block_icon' src="" alt="icon" />
+              <h4>- Диализатор</h4> <div></div>
+            </span>
+          </div>
+          <div className='total__block_list'>
+            <span className='total__block_title_container'>
+                <img className='total__block_icon' src="" alt="icon" />
+                <h4>- Концентратор Объём:</h4> <div></div>
+              </span>
+              <span className='total__block_title_container'>
+                <img className='total__block_icon' src="" alt="icon" />
+                <h4>- Игла/ Катетер</h4> <div></div>
+              </span>
+              <span className='total__block_title_container'>
+                <img className='total__block_icon' src="" alt="icon" />
+                <h4>- Бикарбонат мл</h4> <div></div>
+              </span>
+          </div>
+          <div className='total__block_list'>
+            <span className='total__block_title_container'>
+                  <img className='total__block_icon' src="" alt="icon" />
+                  <h4>- Антикоагуляция ед. </h4> <div></div>
+            </span>
+            <span className='total__block_title_container'>
+              <img className='total__block_icon' src="" alt="icon" />
+              <h4>- Сухой вес кг.</h4> <div></div>
+            </span>
+          </div>
         </div>
-
       <Banner />
       <HomeBlock />
       <TextBlock />

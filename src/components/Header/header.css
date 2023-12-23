@@ -1,21 +1,12 @@
 .header {
     display: flex;
     align-items: center;
-
+    column-gap:200px;
+    margin-bottom: 50px;
 }
-
-.header-title {
-    font-size: 65px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-
-}
-
 .header_Text {
-    margin-left: 200px;
-    font-size: 16px;
+    font-size: var(--text);
     font-style: normal;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 26px;   
 }

@@ -1,5 +1,6 @@
 // ProgramButtons.tsx
 import React from 'react';
+import './programButtons.css'
 
 interface ProgramButtonsProps {
   programOptions: string[];
@@ -9,11 +10,11 @@ interface ProgramButtonsProps {
 
 const ProgramButtons: React.FC<ProgramButtonsProps> = ({ programOptions, selectedProgram, onSelectProgram }) => {
   return (
-    <div className="buttonChose">
+    <div className="program_button__container">
       {programOptions.map((program, index) => (
         <button
           key={index}
-          className={`contentItem ${selectedProgram === program ? 'selected' : ''}`}
+          className={`global_button ${selectedProgram === program ? 'global_button_active' : ''}`}
           onClick={() => onSelectProgram(program)}
         >
           {program}
